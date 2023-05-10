@@ -15,6 +15,8 @@
                     "Y-Position" : 480,
                     "IsMovable": 0,
                     "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
                     "DialogText" : "I keep all my orders here",
                     "Options" : [
                     ]
@@ -27,6 +29,8 @@
                     "Y-Position" : 230,
                     "IsMovable": 0,
                     "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
                     "DialogText" : "It's strange... No data on the guy from the bar...."
                 },
                 {
@@ -37,6 +41,8 @@
                     "Y-Position" : 450,
                     "IsMovable": 0,
                     "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
                     "DialogText" : "Why do I need dried paint?"
                 },
                 {
@@ -47,6 +53,8 @@
                     "Y-Position" : 500,
                     "IsMovable": 0,
                     "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
                     "DialogText" : "Empty box... I have to keep looking..."
                 },
                 {
@@ -57,6 +65,8 @@
                     "Y-Position" : 410,
                     "IsMovable": 0,
                     "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
                     "DialogText" : "This may be useful"
                 },
                 {
@@ -66,6 +76,8 @@
                     "Y-Position" : 370,
                     "IsMovable": 0,
                     "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
                     "DialogText" : "none"
                 }
             ]

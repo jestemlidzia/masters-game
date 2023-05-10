@@ -1,5 +1,7 @@
 import pygame, sys, os
 import board
+import textbox
+import equipment
 import item_viewing_window
 
 class Game(object):
@@ -14,10 +16,13 @@ class Game(object):
         self.screen = pygame.display.set_mode((self.width,self.height))
 
         self.board = board.Board(self.screen, 0)
+        self.equipment = equipment.Equipment()
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
     
+
     def update(self):
         # Handle events
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit(0)
@@ -28,8 +33,33 @@ class Game(object):
                         if is_collidate and board_item.is_clickable:
                             print('clicked on image', board_item.name)
                             self.item_view_window.show_item(board_item)
+                            print(self.item_view_window.is_visible)
+
+                            board_item.is_active = 1
+                            print('Test liftable', board_item.name, " : ", board_item.is_liftable)
+                            print('Test active', board_item.name, " : ", board_item.is_active)
                 else:
-                    self.item_view_window.hide_item()
+                    for item in self.board.level_items:
+                        if item.is_active:
+                            if item.is_liftable:
+                                if 188 <= pygame.mouse.get_pos()[0] <= 583 and 530 <= pygame.mouse.get_pos()[1] <= 615:
+                                    self.equipment.add_item_to_equipment(item)
+                                    print('The item {} has been put into the backpack'.format(item.name))
+                                # if inne coordinates
+                                #     print("I don't need it", item.name)
+                                else:
+                                    item.is_active = 0
+                                    self.item_view_window.hide_item()
+                            else:
+                                item.is_active = 0
+                                print("Item {} can'it be put into backpack".format(item.name))
+                                self.item_view_window.hide_item()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_b:
+                    print('Items in your backpack:')
+                    for lifted_item in self.equipment.item_list:
+                        # self.item_view_window.show_item(lifted_item)
+                        print(lifted_item.name)
 
         self.board.update_board()
         pygame.display.update()
