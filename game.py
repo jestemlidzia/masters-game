@@ -43,23 +43,22 @@ class Game(object):
                         if item.is_active:
                             if item.is_liftable:
                                 if 188 <= pygame.mouse.get_pos()[0] <= 583 and 530 <= pygame.mouse.get_pos()[1] <= 615:
-                                    self.equipment.add_item_to_equipment(item)
-                                    print('The item {} has been put into the backpack'.format(item.name))
-                                # if inne coordinates
-                                #     print("I don't need it", item.name)
-                                else:
                                     item.is_active = 0
+                                    self.equipment.add_item_to_equipment(item)
                                     self.item_view_window.hide_item()
                             else:
+                                if 188 <= pygame.mouse.get_pos()[0] <= 583 and 530 <= pygame.mouse.get_pos()[1] <= 615:
+                                    print("Item {} can'it be put into backpack".format(item.name))
+                                    # self.item_view_window.hide_item()
+                            if 655 <= pygame.mouse.get_pos()[0] <= 1055 and 530 <= pygame.mouse.get_pos()[1] <= 615:
                                 item.is_active = 0
-                                print("Item {} can'it be put into backpack".format(item.name))
                                 self.item_view_window.hide_item()
+
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
-                    print('Items in your backpack:')
-                    for lifted_item in self.equipment.item_list:
-                        # self.item_view_window.show_item(lifted_item)
-                        print(lifted_item.name)
+                    self.equipment.print_backpack()
+                    # self.equipment.check_item_in_backpack('Book')
+                    
 
         self.board.update_board()
         pygame.display.update()
