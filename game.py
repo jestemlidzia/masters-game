@@ -16,7 +16,7 @@ class Game(object):
         self.screen = pygame.display.set_mode((self.width,self.height))
 
         self.board = board.Board(self.screen, 0)
-        self.equipment = equipment.Equipment()
+        self.equipment = equipment.Equipment(self.screen)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
     
 
@@ -27,6 +27,8 @@ class Game(object):
             if event.type == pygame.QUIT:
                 sys.exit(0)
             if event.type == pygame.MOUSEBUTTONDOWN:
+                if self.equipment.is_open:
+                    self.equipment.find_active_area()
                 if not self.item_view_window.is_visible:
                     for board_item in self.board.level_items:
                         is_collidate = board_item.get_image_area().collidepoint(event.pos)
@@ -56,7 +58,12 @@ class Game(object):
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
-                    self.equipment.print_backpack()
+                    if self.equipment.is_open == False:
+                        self.equipment.print_backpack()
+                        self.equipment.show_backpack()
+                        self.equipment.find_active_area()
+                    else:
+                        self.equipment.hide_backpack()
                     # self.equipment.check_item_in_backpack('Book')
                     
 
