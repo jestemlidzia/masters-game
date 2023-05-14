@@ -41,20 +41,8 @@ class Game(object):
                             print('Test liftable', board_item.name, " : ", board_item.is_liftable)
                             print('Test active', board_item.name, " : ", board_item.is_active)
                 else:
-                    for item in self.board.level_items:
-                        if item.is_active:
-                            if item.is_liftable:
-                                if 188 <= pygame.mouse.get_pos()[0] <= 583 and 530 <= pygame.mouse.get_pos()[1] <= 615:
-                                    item.is_active = 0
-                                    self.equipment.add_item_to_equipment(item)
-                                    self.item_view_window.hide_item()
-                            else:
-                                if 188 <= pygame.mouse.get_pos()[0] <= 583 and 530 <= pygame.mouse.get_pos()[1] <= 615:
-                                    print("Item {} can'it be put into backpack".format(item.name))
-                                    # self.item_view_window.hide_item()
-                            if 655 <= pygame.mouse.get_pos()[0] <= 1055 and 530 <= pygame.mouse.get_pos()[1] <= 615:
-                                item.is_active = 0
-                                self.item_view_window.hide_item()
+                    for textbox in self.item_view_window.textbox_list:
+                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
