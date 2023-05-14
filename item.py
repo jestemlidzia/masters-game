@@ -1,7 +1,7 @@
 import pygame, os
 
 class Item(object):
-    def __init__(self, screen, name, is_movable, is_clickable, is_liftable, is_active, img, full_img, dialog_text, position = (0,0)):
+    def __init__(self, screen, name, is_movable, is_clickable, is_liftable, is_active, img, full_img, equip_img, dialog_text, position = (0,0)):
         self.screen = screen
         self.name = name
         self.is_movable = is_movable
@@ -10,6 +10,7 @@ class Item(object):
         self.is_active = is_active
         self.img = img
         self.full_img = full_img
+        self.equip_img = equip_img
         self.position = position
         self.dialog_text = dialog_text
 
