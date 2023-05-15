@@ -24,9 +24,12 @@ class Board(object):
             pos = (game_item['X-Position'], game_item['Y-Position'])
             is_movable = bool(game_item['IsMovable'])
             is_clickable = bool(game_item['IsClickable'])
+            is_liftable = bool(game_item['IsLiftable'])
+            is_active = bool(game_item['IsActive'])
             full_img = game_item['FullImg'] if is_clickable else None
+            equip_img = game_item['EquipImage'] if is_liftable else None
             dialog_text = game_item['DialogText']
-            new_item = item.Item(self.screen, name, is_movable, is_clickable, img, full_img, dialog_text, pos)
+            new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, img, full_img, equip_img, dialog_text, pos)
             self.level_items.append(new_item)
 
     def update_board(self):
