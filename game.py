@@ -36,7 +36,6 @@ class Game(object):
                             print('clicked on image', board_item.name)
                             self.item_view_window.show_item(board_item)
                             print(self.item_view_window.is_visible)
-
                             board_item.is_active = 1
                             print('Test liftable', board_item.name, " : ", board_item.is_liftable)
                             print('Test active', board_item.name, " : ", board_item.is_active)
@@ -49,13 +48,20 @@ class Game(object):
                     if self.equipment.is_open == False:
                         self.equipment.print_backpack()
                         self.equipment.show_backpack()
-                        # self.equipment.update_equip()
                     else:
                         self.equipment.hide_backpack()
                     # self.equipment.check_item_in_backpack('Book')
-                    
+                if event.key == pygame.K_r:
+                    if self.equipment.is_open:
+                        self.equipment.remove_item()
+
+        if self.equipment.is_open:            
+            self.equipment.update_equip()
+            self.equipment.get_selected_item()
+            
         if not self.item_view_window.is_visible:
             self.board.update_board()
+ 
         pygame.display.update()
         self.clock.tick(60)
 
