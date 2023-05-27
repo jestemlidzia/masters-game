@@ -26,12 +26,14 @@ class TextBox(object):
 
         self.screen.blit(self.text, self.textRect)
 
-    def call_action_if_clicked(self, clicked_point, item_view_window, equipment):
+    def call_action_if_clicked(self, clicked_point, item_view_window, equipment, board):
         if self.left_top[0] <= clicked_point[0] <= self.right_bottom[0] and self.left_top[1] <= clicked_point[1] <= self.right_bottom[1]:
             if self.sentence == 'Take this item':
                 item_view_window.current_item.is_active = 0
                 equipment.add_item_to_equipment(item_view_window.current_item)
+                item_to_remove = item_view_window.current_item
                 item_view_window.hide_item()
+                board.remove_item_from_board(item_to_remove)
             elif self.sentence == 'I don\'t need it' or self.sentence == 'Exit':
                 item_view_window.current_item.is_active = 0
                 item_view_window.hide_item()

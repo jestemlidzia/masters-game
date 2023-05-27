@@ -41,7 +41,7 @@ class Game(object):
                             print('Test active', board_item.name, " : ", board_item.is_active)
                 else:
                     for textbox in self.item_view_window.textbox_list:
-                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment)
+                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
@@ -58,8 +58,10 @@ class Game(object):
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()
-
-        self.board.update_board()
+            
+        if not self.item_view_window.is_visible:
+            self.board.update_board()
+ 
         pygame.display.update()
         self.clock.tick(60)
 
