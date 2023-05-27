@@ -40,8 +40,11 @@ class ItemViewingWindow(object):
         self.screen.blit(self.window_bg, (0,0))
         
         textbox_values = [self.current_item.name, self.current_item.dialog_text]
-        if self.current_item.is_liftable:
-            textbox_values += ['Take this item', 'I don\'t need it']
+        if self.current_item.is_clickable:
+            if self.current_item.is_liftable:
+                textbox_values += ['Take this item', 'I don\'t need it']
+            else:
+                textbox_values += ['---', 'Exit']
             if 'IS_XXX_ITEM_CAN_BE_USE' == 'TODO':
                 textbox_values.append('You can use XXX')
             else:

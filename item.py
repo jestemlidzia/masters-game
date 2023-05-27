@@ -18,8 +18,10 @@ class Item(object):
         self.screen.blit(self.game_item, self.position)
 
     def update_item(self):
-        if self.is_movable:
-            self.screen.blit(self.game_item, self.position)
+        self.screen.blit(self.game_item, self.position)
+    
+    def change_position(self, new_position):
+        self.position = new_position
 
     def get_image_area(self):
         return self.game_item.get_rect(topleft = self.position)
