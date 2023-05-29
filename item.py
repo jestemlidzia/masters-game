@@ -25,3 +25,9 @@ class Item(object):
 
     def get_image_area(self):
         return self.game_item.get_rect(topleft = self.position)
+    
+    def get_image_size(self):
+        x = self.game_item.get_width()
+        y = self.game_item.get_height()
+
+        return (x,y)

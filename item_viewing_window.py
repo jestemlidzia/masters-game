@@ -54,7 +54,10 @@ class ItemViewingWindow(object):
             tb.display_text(textbox_values[idx])
 
         showing_item = pygame.image.load(os.path.join("art", self.current_item.full_img))
-        self.screen.blit(showing_item, (300,200))
+
+        x = 640 - (showing_item.get_width())/2
+        y = 158 + 85 - (showing_item.get_height())/2
+        self.screen.blit(showing_item, (x,y))
 
     def hide_item(self):
         print("ItemViewingWindow hide")
