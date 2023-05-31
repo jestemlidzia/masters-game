@@ -33,12 +33,10 @@ class Game(object):
                     for board_item in self.board.level_items:
                         is_collidate = board_item.get_image_area().collidepoint(event.pos)
                         if is_collidate and board_item.is_clickable:
-                            print('clicked on image', board_item.name)
+                            if self.equipment.is_open:
+                                self.equipment.hide_backpack()
                             self.item_view_window.show_item(board_item)
-                            print(self.item_view_window.is_visible)
                             board_item.is_active = 1
-                            print('Test liftable', board_item.name, " : ", board_item.is_liftable)
-                            print('Test active', board_item.name, " : ", board_item.is_active)
                 else:
                     for textbox in self.item_view_window.textbox_list:
                         textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board)
