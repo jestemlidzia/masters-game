@@ -40,6 +40,7 @@ class TextBox(object):
                 item_view_window.current_item.is_active = 0
                 item_view_window.hide_item()
             elif self.sentence == 'You can use {}'.format(item_view_window.current_item.interact_with):
+                item_view_window.hide_item()
                 task_manager.enable_task_action("open_secret_box")
                 # wywolanie funkcji akcji, która ma jako argument progression status, lub zmiana statusu akcji na TRUE
             else:

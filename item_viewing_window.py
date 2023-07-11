@@ -50,7 +50,6 @@ class ItemViewingWindow(object):
                 textbox_values += ['Take this item', 'I don\'t need it']
             else:
                 textbox_values += ['---', 'Exit']
-            # if 'IS_XXX_ITEM_CAN_BE_USE' == 'TODO':
             if self.current_item.interact_with == self.selected_equip_item:           # sprawdzenie czy po wybraniu np chisel z plecaka, zmienia sie akcja na kostce
                 textbox_values.append('You can use {}'.format(self.current_item.interact_with))
             else:
