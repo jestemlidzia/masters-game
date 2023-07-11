@@ -3,6 +3,7 @@ import board
 import textbox
 import equipment
 import item_viewing_window
+import task_manager
 
 class Game(object):
     def __init__(self):
@@ -18,7 +19,10 @@ class Game(object):
         self.board = board.Board(self.screen, 0)
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
-    
+
+        self.task_manager = task_manager.TaskManager(self.screen)
+
+        self.level_number = 1
 
     def update(self):
         # Handle events
@@ -58,12 +62,18 @@ class Game(object):
             self.equipment.update_equip()
             self.equipment.get_selected_item()
             
-        if not self.item_view_window.is_visible:
-            self.board.update_board()
- 
+        if not self.item_view_window.is_visible and not self.task_manager.screen_lock:
+            self.board.update_board()      
+
+        if self.task_manager.monitor_tasks():
+            self.change_level()
+
         pygame.display.update()
         self.clock.tick(60)
 
-    def change_level(self, level_number):
+    def change_level(self):
         print('Next level')
+        self.level_number += 1
+        print("NOWY SCREEN")
+        # self.screen = new_screen
         #update bg, new_items = new board
