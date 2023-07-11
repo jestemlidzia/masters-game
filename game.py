@@ -44,7 +44,7 @@ class Game(object):
                             board_item.is_active = 1
                 else:
                     for textbox in self.item_view_window.textbox_list:
-                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board)
+                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board, self.task_manager)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
