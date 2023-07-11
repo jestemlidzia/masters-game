@@ -6,20 +6,15 @@ class Board(object):
     def __init__(self, screen, level_number):
 
         f = open('levels.json')
-        data = json.load(f)
+        self.data = json.load(f)
         f.close()
 
         self.screen = screen
-        level_data = data['Levels'][level_number]
-
-        print(level_data['Name'])
-        self.level_name = level_data['Name']
-        self.level_bg = pygame.image.load(os.path.join("art", level_data['BackgroungImg']))
-        self.screen.blit(self.level_bg, (0,0))
-
-        self.initial_screen = self.screen.copy()
-
         self.level_items = []
+
+        self.load_new_level_elements(level_number)
+
+    def generate_level_items_list(self, level_data):
         for game_item in level_data['Items']:
             name = game_item['Name']
             img = game_item['Img']
@@ -35,6 +30,17 @@ class Board(object):
 
             new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, interact_with, img, full_img, equip_img, dialog_text, pos)
             self.level_items.append(new_item)
+
+    def load_new_level_elements(self, level_number):
+        self.level_items = []
+        level_data = self.data['Levels'][level_number]
+        self.level_name = level_data['Name']
+        self.level_bg = pygame.image.load(os.path.join("art", level_data['BackgroungImg']))
+        self.screen.blit(self.level_bg, (0,0))
+
+        self.initial_screen = self.screen.copy()
+
+        self.generate_level_items_list(level_data)
 
     def update_board(self):
         for item in self.level_items:

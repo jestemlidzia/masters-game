@@ -20,7 +20,7 @@ class Game(object):
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
 
-        self.task_manager = task_manager.TaskManager(self.screen)
+        self.task_manager = task_manager.TaskManager(self.screen, self.board)
 
         self.level_number = 1
 

@@ -2,8 +2,9 @@ import pygame
 import os
 
 class TaskManager(object):
-    def __init__(self, screen):
+    def __init__(self, screen, board):
         self.screen = screen
+        self.board = board
         self.action_list = self.generate_task_list()
         self.screen_lock = False
 
@@ -35,6 +36,7 @@ class TaskManager(object):
             print("--- Opening a secret box ---")
             self.action_list[action_name]["execution_status"] = True
             self.show_animation(["slide1.png", "slide2.png", "slide1.png", "slide3.png"])
+            self.board.load_new_level_elements(1)
             return True
         elif action_name == "another_task":
             return False
