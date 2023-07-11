@@ -27,7 +27,9 @@ class TextBox(object):
         self.screen.blit(self.text, self.textRect)
 
     def call_action_if_clicked(self, clicked_point, item_view_window, equipment, board):
+        print('ssssssss', self.sentence)
         if self.left_top[0] <= clicked_point[0] <= self.right_bottom[0] and self.left_top[1] <= clicked_point[1] <= self.right_bottom[1]:
+            print('oo', item_view_window.current_item.interact_with)
             if self.sentence == 'Take this item':
                 item_view_window.current_item.is_active = 0
                 equipment.add_item_to_equipment(item_view_window.current_item)
@@ -37,8 +39,8 @@ class TextBox(object):
             elif self.sentence == 'I don\'t need it' or self.sentence == 'Exit':
                 item_view_window.current_item.is_active = 0
                 item_view_window.hide_item()
-            elif self.sentence == 'You can use XXX':
-                print()
+            elif self.sentence == 'You can use {}'.format(item_view_window.current_item.interact_with):
+                print('sss')
+                # wywolanie funkcji akcji, która ma jako argument progression status, lub zmiana statusu akcji na TRUE
             else:
                 print('No action with this textbox')
-

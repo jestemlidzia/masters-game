@@ -16,8 +16,9 @@
                     "Y-Position" : 480,
                     "IsMovable": 0,
                     "IsClickable": 1,
-                    "IsLiftable": 1,
+                    "IsLiftable": 0,
                     "IsActive": 0,
+                    "InteractWith": "none",
                     "DialogText" : "I keep all my orders here",
                     "Options" : [
                     ]
@@ -32,6 +33,7 @@
                     "IsClickable": 1,
                     "IsLiftable": 0,
                     "IsActive": 0,
+                    "InteractWith": "none",
                     "DialogText" : "It's strange... No data on the guy from the bar...."
                 },
                 {
@@ -45,6 +47,7 @@
                     "IsClickable": 1,
                     "IsLiftable": 1,
                     "IsActive": 0,
+                    "InteractWith": "none",
                     "DialogText" : "Why do I need dried paint?"
                 },
                 {
@@ -57,6 +60,7 @@
                     "IsClickable": 1,
                     "IsLiftable": 0,
                     "IsActive": 0,
+                    "InteractWith": "none",
                     "DialogText" : "Empty box... I have to keep looking..."
                 },
                 {
@@ -70,6 +74,7 @@
                     "IsClickable": 1,
                     "IsLiftable": 1,
                     "IsActive": 0,
+                    "InteractWith": "none",
                     "DialogText" : "This may be useful"
                 },
                 {
@@ -81,6 +86,20 @@
                     "IsClickable": 0,
                     "IsLiftable": 0,
                     "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Cube",
+                    "Img" : "cube-small.png",
+                    "FullImg" : "cube.png",
+                    "X-Position" : 195,
+                    "Y-Position" : 364,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "Chisel",      
                     "DialogText" : "none"
                 }
             ]

@@ -62,7 +62,7 @@ class Equipment(object):
         self.is_open = False
 
     def selected_area(self):
-        self.last_screenn = self.screen.copy()
+        # self.last_screenn = self.screen.copy()
         for i in range(len(self.x_areas_range)):
             if self.x_areas_range[i][0] <= pygame.mouse.get_pos()[0] <= self.x_areas_range[i][1] and self.y_area_range[0] <= pygame.mouse.get_pos()[1] <= self.y_area_range[1]:
                 self.is_selected = False
@@ -80,17 +80,21 @@ class Equipment(object):
                 showing_taken_item = pygame.image.load(os.path.join("art", item.equip_img))
                 self.screen.blit(showing_taken_item, (self.x_areas_range[area_number][0]+20,self.y_area_range[0]+20))
                 if self.active_area_range != False:
+                    if self.active_area_range[0] > self.x_areas_range[area_number][0] or self.is_selected:          # > to odkliknięcie zaznaczonego elementu
+                        self.selected_item = False
                     if self.active_area_range[0] == self.x_areas_range[area_number][0]:
                         self.selected_item = item
-                    if self.is_selected:
-                        self.selected_item = False
+                    # if self.is_selected:
+                    #     self.selected_item = False
                 area_number = area_number + 1
+            
             # else:
             #     print('Your backpack is full! Throw an item out of your backpack to free up some space!')
 
     def get_selected_item(self):
         if self.selected_item != False:
             print('The {} was selected'.format(self.selected_item.name))
+            # self.selected_item.is_movable = 1
             return self.selected_item.name
 
     def remove_item(self):

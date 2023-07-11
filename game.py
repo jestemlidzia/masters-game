@@ -11,7 +11,7 @@ class Game(object):
 
         self.height = 720
         self.width = 1280
-
+        
         pygame.display.set_caption('Ola&Lidka')
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width,self.height))
@@ -58,10 +58,6 @@ class Game(object):
                 if event.key == pygame.K_r:
                     if self.equipment.is_open:
                         self.equipment.remove_item()
-
-                if event.key == pygame.K_c:
-                    self.task_manager.enable_task_action("open_secret_box")
-
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()
