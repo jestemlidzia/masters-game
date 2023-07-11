@@ -17,6 +17,7 @@ class Equipment(object):
         # (384, 650) cords where backpack is visible
 
         self.item_list = []
+        self.cube_parts = ["Cube frame", "Cube element 1", "Cube element 2", "Cube element 3"]
         self.x_areas_range = [(384,447), (448, 511), (512, 575), (576, 639), (640, 703), (704, 767), (768, 831), (832, 895)]
         self.y_area_range = (650, 710)
         self.equip_size = 8
@@ -49,6 +50,17 @@ class Equipment(object):
         else:
             print('There is no {} in the backpack'.format(item_name))
             return False
+        
+    def check_cube_parts(self):
+        count_elements = 0
+        for i in self.item_list:
+            if i.name in self.cube_parts:
+                count_elements += 1
+            print('loooo', count_elements)
+            if count_elements == 4: 
+                return True
+        return False
+    
         
     def show_backpack(self):
         self.last_screen = self.screen.copy()

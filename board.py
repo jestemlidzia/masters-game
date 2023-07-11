@@ -23,12 +23,13 @@ class Board(object):
             is_clickable = bool(game_item['IsClickable'])
             is_liftable = bool(game_item['IsLiftable'])
             is_active = bool(game_item['IsActive'])
+            change_slide = game_item['ChangeSlide'] if is_clickable == 0 else None
             interact_with = game_item['InteractWith']
             full_img = game_item['FullImg'] if is_clickable else None
             equip_img = game_item['EquipImage'] if is_liftable else None
             dialog_text = game_item['DialogText']
 
-            new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, interact_with, img, full_img, equip_img, dialog_text, pos)
+            new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, change_slide, interact_with, img, full_img, equip_img, dialog_text, pos)
             self.level_items.append(new_item)
 
     def load_new_level_elements(self, level_number):

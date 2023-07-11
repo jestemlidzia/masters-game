@@ -42,6 +42,8 @@ class TextBox(object):
             elif self.sentence == 'You can use {}'.format(item_view_window.current_item.interact_with):
                 item_view_window.hide_item()
                 task_manager.enable_task_action("open_secret_box")
+            elif self.sentence == 'You can repair the cube':
+                print('repair')
                 # wywolanie funkcji akcji, która ma jako argument progression status, lub zmiana statusu akcji na TRUE
             else:
                 print('No action with this textbox')
