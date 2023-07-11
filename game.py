@@ -10,7 +10,7 @@ class Game(object):
 
         self.height = 720
         self.width = 1280
-
+        
         pygame.display.set_caption('Ola&Lidka')
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width,self.height))
@@ -35,7 +35,8 @@ class Game(object):
                         if is_collidate and board_item.is_clickable:
                             if self.equipment.is_open:
                                 self.equipment.hide_backpack()
-                            self.item_view_window.show_item(board_item)
+                            get_selected_item = self.equipment.get_selected_item()
+                            self.item_view_window.show_item(board_item, get_selected_item)
                             board_item.is_active = 1
                 else:
                     for textbox in self.item_view_window.textbox_list:
@@ -48,11 +49,11 @@ class Game(object):
                         self.equipment.show_backpack()
                     else:
                         self.equipment.hide_backpack()
+                        self.equipment.get_selected_item()
                     # self.equipment.check_item_in_backpack('Book')
                 if event.key == pygame.K_r:
                     if self.equipment.is_open:
                         self.equipment.remove_item()
-
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()
