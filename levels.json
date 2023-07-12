@@ -140,6 +140,19 @@
                     ]
                 },
                 {
+                    "Name" : "Plant",
+                    "Img" : "plant.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
                     "Name" : "Note",
                     "Img" : "note-small.png",
                     "FullImg" : "note.png",
@@ -153,6 +166,19 @@
                     "DialogText" : "It looks like some kind of cipher...",
                     "Options" : [
                     ]
+                },
+                {
+                    "Name" : "Bush",
+                    "Img" : "bush.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
                 },
                 {
                     "Name" : "Cube frame",
@@ -171,6 +197,19 @@
                     ]
                 },
                 {
+                    "Name" : "Barrel",
+                    "Img" : "barrel.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
                     "Name" : "Cube element 1",
                     "Img" : "cube_element_1-small.png",
                     "FullImg" : "cube_element_1.png",
@@ -185,6 +224,19 @@
                     "DialogText" : "Why is there some trash in my yard!!!?",
                     "Options" : [
                     ]
+                },
+                {
+                    "Name" : "Flowerbed",
+                    "Img" : "flowerbed.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
                 },
                 {
                     "Name" : "Cube element 2",
@@ -269,6 +321,32 @@
                     ]
                 },
                 {
+                    "Name" : "Build with symbol",
+                    "Img" : "build_symbol.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Build with logo",
+                    "Img" : "build_logo.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
                     "Name" : "Cube element 3",
                     "Img" : "cube_element_3-small.png",
                     "FullImg" : "cube_element_3.png",
@@ -304,6 +382,19 @@
                     "DialogText" : "none",
                     "Options" : [
                     ]
+                },
+                {
+                    "Name" : "Woman",
+                    "Img" : "woman.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
                 },
                 {
                     "Name" : "Newspapers",
