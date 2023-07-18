@@ -86,6 +86,7 @@
                     "IsClickable": 0,
                     "IsLiftable": 0,
                     "IsActive": 0,
+                    "ChangeSlide" : "none",
                     "InteractWith": "none",
                     "DialogText" : "none"
                 },
@@ -105,9 +106,358 @@
             ]
         },
         {
-            "Name" : "Chapter 2: Wake up",
-            "BackgroungImg" : "level2-background.png",
+            "Name" : "Chapter 2: On the other side",
+            "BackgroungImg" : "level2-backyard.png",
             "Items": [
+                {
+                    "Name" : "Right arrow",
+                    "Img" : "right-arrow.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 600,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : 2,
+                    "InteractWith": "none",
+                    "DialogText" : "none",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Intercom",
+                    "Img" : "intercom-small.png",
+                    "FullImg" : "intercom.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "Intercom? I can't remember the code",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Plant",
+                    "Img" : "plant.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Note",
+                    "Img" : "note-small.png",
+                    "FullImg" : "note.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "It looks like some kind of cipher...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Bush",
+                    "Img" : "bush.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Cube frame",
+                    "Img" : "cube_frame-small.png",
+                    "FullImg" : "cube_frame.png",
+                    "EquipImage" : "cube_frame-equip.png",
+                    "X-Position" : 1000,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "What is it? It looks like part of that weird... cube?",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Barrel",
+                    "Img" : "barrel.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Cube element 1",
+                    "Img" : "cube_element_1-small.png",
+                    "FullImg" : "cube_element_1.png",
+                    "EquipImage" : "cube_element_1-equip.png",
+                    "X-Position" : 200,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "Why is there some trash in my yard!!!?",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Flowerbed",
+                    "Img" : "flowerbed.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Cube element 2",
+                    "Img" : "cube_element_2-small.png",
+                    "FullImg" : "cube_element_2.png",
+                    "EquipImage" : "cube_element_2-equip.png",
+                    "X-Position" : 400,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "What's that?",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Tools",
+                    "Img" : "tools-small.png",
+                    "FullImg" : "tools.png",
+                    "X-Position" : 800,
+                    "Y-Position" : 400,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "Who left my tool box here?",
+                    "Options" : [
+                    ]
+                }
+            ]
+        },
+        {
+            "Name" : "Chapter 2: 2b",
+            "BackgroungImg" : "level2-city.png",
+            "Items": [
+                {
+                    "Name" : "Right arrow",
+                    "Img" : "right-arrow.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 600,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : 3,
+                    "InteractWith": "none",
+                    "DialogText" : "none",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Left arrow",
+                    "Img" : "left-arrow.png",
+                    "X-Position" : 130,
+                    "Y-Position" : 600,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : 1,
+                    "InteractWith": "none",
+                    "DialogText" : "none",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Notice board",
+                    "Img" : "notice_board-small.png",
+                    "FullImg" : "notice_board.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I see some new announcements here...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Build with symbol",
+                    "Img" : "build_symbol.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Build with logo",
+                    "Img" : "build_logo.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Cube element 3",
+                    "Img" : "cube_element_3-small.png",
+                    "FullImg" : "cube_element_3.png",
+                    "EquipImage" : "cube_element_3-equip.png",
+                    "X-Position" : 800,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "Another quirky element, I'd better keep it",
+                    "Options" : [
+                    ]
+                }
+            ]
+        },
+        {
+            "Name" : "Chapter 2: 2c",
+            "BackgroungImg" : "level2-store.png",
+            "Items": [
+                {
+                    "Name" : "Left arrow",
+                    "Img" : "left-arrow.png",
+                    "X-Position" : 130,
+                    "Y-Position" : 600,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : 2,
+                    "InteractWith": "none",
+                    "DialogText" : "none",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Woman",
+                    "Img" : "woman.png",
+                    "X-Position" : 1150,
+                    "Y-Position" : 370,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Newspapers",
+                    "Img" : "newspapers-small.png",
+                    "FullImg" : "newspapers.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "Weird... there must be a date error here",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Chewing gum",
+                    "Img" : "gum-small.png",
+                    "FullImg" : "gum.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Candy bar",
+                    "Img" : "bar-small.png",
+                    "FullImg" : "bar.png",
+                    "EquipImage" : "bar-equip.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I don't think it will be useful",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Can",
+                    "Img" : "can-small.png",
+                    "FullImg" : "can.png",
+                    "EquipImage" : "can-equip.png",
+                    "X-Position" : -1,
+                    "Y-Position" : -1,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 1,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I don't have any money on me to buy it anyway",
+                    "Options" : [
+                    ]
+                }
             ]
         }
     ]

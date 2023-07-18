@@ -40,8 +40,11 @@ class Game(object):
                             if self.equipment.is_open:
                                 self.equipment.hide_backpack()
                             get_selected_item = self.equipment.get_selected_item()
-                            self.item_view_window.show_item(board_item, get_selected_item)
+                            self.item_view_window.show_item(board_item, get_selected_item, self.equipment)
                             board_item.is_active = 1
+                        if is_collidate and board_item.is_clickable == 0:
+                            if board_item.change_slide != "none":
+                                self.board.load_new_level_elements(board_item.change_slide)
                 else:
                     for textbox in self.item_view_window.textbox_list:
                         textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board, self.task_manager)

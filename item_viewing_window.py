@@ -37,7 +37,7 @@ class ItemViewingWindow(object):
             new_textbox = textbox.TextBox(self.screen, info['sentence'], info['color'], info['font'], info['size'], info['center'], info['left_top'], info['right_bottom'])
             self.textbox_list.append(new_textbox)
 
-    def show_item(self, current_item, selected_equip_item):
+    def show_item(self, current_item, selected_equip_item, equipment):
         print("ItemViewingWindow open")
         self.current_item = current_item
         self.selected_equip_item = selected_equip_item
@@ -52,6 +52,8 @@ class ItemViewingWindow(object):
                 textbox_values += ['---', 'Exit']
             if self.current_item.interact_with == self.selected_equip_item:           # sprawdzenie czy po wybraniu np chisel z plecaka, zmienia sie akcja na kostce
                 textbox_values.append('You can use {}'.format(self.current_item.interact_with))
+            if equipment.check_cube_parts():
+                textbox_values.append('You can repair the cube')
             else:
                 textbox_values.append('Nothing to do with it')
 
