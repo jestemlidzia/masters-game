@@ -56,7 +56,6 @@ class Equipment(object):
         for i in self.item_list:
             if i.name in self.cube_parts:
                 count_elements += 1
-            print('loooo', count_elements)
             if count_elements == 4: 
                 return True
         return False
@@ -106,7 +105,6 @@ class Equipment(object):
     def get_selected_item(self):
         if self.selected_item != False:
             print('The {} was selected'.format(self.selected_item.name))
-            # self.selected_item.is_movable = 1
             return self.selected_item.name
 
     def remove_item(self):

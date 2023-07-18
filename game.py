@@ -61,8 +61,6 @@ class Game(object):
                 if event.key == pygame.K_r:
                     if self.equipment.is_open:
                         self.equipment.remove_item()
-                if event.key == pygame.K_t:
-                    self.equipment.check_cube_parts()
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()

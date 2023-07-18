@@ -15,7 +15,6 @@ class Item(object):
         self.equip_img = equip_img
         self.position = position
         self.dialog_text = dialog_text
-
         self.game_item = pygame.image.load(os.path.join("art", img))
         self.screen.blit(self.game_item, self.position)
 

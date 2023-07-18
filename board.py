@@ -11,6 +11,7 @@ class Board(object):
 
         self.screen = screen
         self.level_items = []
+        self.taken_elements = []
 
         self.load_new_level_elements(level_number)
 
@@ -28,9 +29,11 @@ class Board(object):
             full_img = game_item['FullImg'] if is_clickable else None
             equip_img = game_item['EquipImage'] if is_liftable else None
             dialog_text = game_item['DialogText']
-
+            if name in self.taken_elements:
+                continue
             new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, change_slide, interact_with, img, full_img, equip_img, dialog_text, pos)
             self.level_items.append(new_item)
+
 
     def load_new_level_elements(self, level_number):
         self.level_items = []
@@ -50,4 +53,4 @@ class Board(object):
     def remove_item_from_board(self, item):
         self.level_items.remove(item)
         self.screen.blit(self.initial_screen, (0,0))
-
+        self.taken_elements.append(item.name)
