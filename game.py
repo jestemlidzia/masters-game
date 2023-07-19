@@ -4,6 +4,7 @@ import textbox
 import equipment
 import item_viewing_window
 import task_manager
+import stm
 
 class Game(object):
     def __init__(self):
@@ -19,6 +20,7 @@ class Game(object):
         self.board = board.Board(self.screen, 0)
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
+        self.stm = stm.STM()
 
         self.task_manager = task_manager.TaskManager(self.screen, self.board)
 
@@ -61,6 +63,10 @@ class Game(object):
                 if event.key == pygame.K_r:
                     if self.equipment.is_open:
                         self.equipment.remove_item()
+                if event.key == pygame.K_o:
+                    self.stm.find_port()
+                    if self.stm.board_connection():
+                        self.stm.write_sth()
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()
