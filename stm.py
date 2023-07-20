@@ -27,14 +27,14 @@ class STM(object):
             print(f"Exception: {exc}")
             return 0
 
-    def write_sth(self):
-        info = "readValue\n"
-        self.ser.write(info.encode())
+    def write_sth(self, info):
+        send_info = info + "\n"
+        self.ser.write(send_info.encode())
         try:
             data = self.ser.readline()
             dec_data = str(data.decode('utf-8'))
             self.value = dec_data
-            print('value fro stm: ', self.value)
+            print('value from stm: ', self.value)
         except Exception as exc:
                 print(f"Exception: {exc}")
 

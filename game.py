@@ -24,6 +24,9 @@ class Game(object):
 
         self.task_manager = task_manager.TaskManager(self.screen, self.board)
 
+        self.stm.find_port()
+        self.stm.board_connection()
+
         self.level_number = 1
 
     def update(self):
@@ -49,7 +52,7 @@ class Game(object):
                                 self.board.load_new_level_elements(board_item.change_slide)
                 else:
                     for textbox in self.item_view_window.textbox_list:
-                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board, self.task_manager)
+                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board, self.task_manager, self.stm)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
@@ -64,9 +67,7 @@ class Game(object):
                     if self.equipment.is_open:
                         self.equipment.remove_item()
                 if event.key == pygame.K_o:
-                    self.stm.find_port()
-                    if self.stm.board_connection():
-                        self.stm.write_sth()
+                    self.stm.write_sth("None")
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()

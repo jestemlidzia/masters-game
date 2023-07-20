@@ -14,6 +14,10 @@ class TaskManager(object):
                 "call_status" : False,
                 "execution_status" : False
             },
+            "repair_box" : {
+                "call_status" : False,
+                "execution_status" : False   
+            },
             "another_task" : {
                 "call_status" : False,
                 "execution_status" : False   
@@ -38,6 +42,11 @@ class TaskManager(object):
             self.show_animation(["slide1.png", "slide2.png", "slide1.png", "slide3.png"])
             self.board.load_new_level_elements(1)
             return True
+        elif action_name == "repair_box":
+            print("--- Secret box has been repaired ---")
+            self.action_list[action_name]["execution_status"] = True
+            self.show_animation(["slide1.png"])
+            # self.board.load_new_level_elements(1)
         elif action_name == "another_task":
             return False
         else:
