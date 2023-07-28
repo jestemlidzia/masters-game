@@ -17,7 +17,7 @@ class Equipment(object):
         # (384, 650) cords where backpack is visible
 
         self.item_list = []
-        self.cube_parts = ["Cube frame", "Cube element 1", "Cube element 2", "Cube element 3"]
+        self.cube_parts = ["Electronics element", "Battery", "Broken cube", "Resistor"]
         self.x_areas_range = [(384,447), (448, 511), (512, 575), (576, 639), (640, 703), (704, 767), (768, 831), (832, 895)]
         self.y_area_range = (650, 710)
         self.equip_size = 8
@@ -55,6 +55,8 @@ class Equipment(object):
         count_elements = 0
         for i in self.item_list:
             if i.name in self.cube_parts:
+                # if akcja na true:
+                #     self.item_list.remove(i)
                 count_elements += 1
             if count_elements == 4: 
                 return True
@@ -112,4 +114,3 @@ class Equipment(object):
             self.item_list.remove(self.selected_item)
             self.screen.blit(self.backpack_view, (384,650))
             self.is_selected = True
-

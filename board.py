@@ -47,6 +47,7 @@ class Board(object):
         self.generate_level_items_list(level_data)
 
     def update_board(self):
+        self.screen.blit(self.level_bg, (0,0))
         for item in self.level_items:
             item.update_item()
 

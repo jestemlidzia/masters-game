@@ -4,6 +4,8 @@ import textbox
 import equipment
 import item_viewing_window
 import task_manager
+import stm
+import threadss
 
 class Game(object):
     def __init__(self):
@@ -19,8 +21,14 @@ class Game(object):
         self.board = board.Board(self.screen, 0)
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
+        self.stm = stm.STM()
+        self.threadss = threadss.Threadss()
 
         self.task_manager = task_manager.TaskManager(self.screen, self.board)
+
+        self.stm.find_port()
+        self.stm.board_connection()
+        # self.threadss.run_thread(self.stm.read_sth())
 
         self.level_number = 1
 
@@ -47,7 +55,7 @@ class Game(object):
                                 self.board.load_new_level_elements(board_item.change_slide)
                 else:
                     for textbox in self.item_view_window.textbox_list:
-                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board, self.task_manager)
+                        textbox.call_action_if_clicked(pygame.mouse.get_pos(), self.item_view_window, self.equipment, self.board, self.task_manager, self.stm)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
@@ -61,11 +69,16 @@ class Game(object):
                 if event.key == pygame.K_r:
                     if self.equipment.is_open:
                         self.equipment.remove_item()
+                if event.key == pygame.K_o:
+                    # self.threadss.run_thread(self.stm.read_sth())
+                    # self.threadss.run_thread(self.stm.write_sth('repair'))
+                    # print('tooo')
+                    self.stm.write_sth("None")
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()
             
-        if not self.item_view_window.is_visible and not self.task_manager.screen_lock:
+        if not self.item_view_window.is_visible and not self.task_manager.screen_lock and not self.equipment.is_open:
             self.board.update_board()      
 
         if self.task_manager.monitor_tasks():

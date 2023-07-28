@@ -52,7 +52,7 @@ class ItemViewingWindow(object):
                 textbox_values += ['---', 'Exit']
             if self.current_item.interact_with == self.selected_equip_item:           # sprawdzenie czy po wybraniu np chisel z plecaka, zmienia sie akcja na kostce
                 textbox_values.append('You can use {}'.format(self.current_item.interact_with))
-            if equipment.check_cube_parts():
+            if equipment.check_cube_parts() and self.current_item.name == "Toolbox":
                 textbox_values.append('You can repair the cube')
             else:
                 textbox_values.append('Nothing to do with it')
