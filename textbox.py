@@ -39,10 +39,12 @@ class TextBox(object):
                 item_view_window.hide_item()
             elif self.sentence == 'You can use {}'.format(item_view_window.current_item.interact_with):
                 item_view_window.hide_item()
+                equipment.remove_item()
                 task_manager.enable_task_action("open_secret_box")
             elif self.sentence == 'You can repair the cube':
                 item_view_window.hide_item()
                 stm.write_sth("repair")
+                
                 task_manager.enable_task_action("repair_box")
             else:
                 print('No action with this textbox')

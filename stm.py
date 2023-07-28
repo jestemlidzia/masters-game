@@ -38,6 +38,16 @@ class STM(object):
         except Exception as exc:
                 print(f"Exception: {exc}")
 
+    def read_sth(self):
+        try:
+            read_data = self.ser.readline()
+            dec_read_data = str(read_data.decode('utf-8'))
+            self.read_value = dec_read_data
+            print('message from stm: ', self.read_value)
+        except Exception as exc:
+                print(f"Exception: {exc}")
+
+
     def updd(self):
         self.find_port()
         if self.board_connection():

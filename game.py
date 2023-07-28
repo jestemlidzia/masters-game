@@ -5,6 +5,7 @@ import equipment
 import item_viewing_window
 import task_manager
 import stm
+import threadss
 
 class Game(object):
     def __init__(self):
@@ -21,11 +22,13 @@ class Game(object):
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
         self.stm = stm.STM()
+        self.threadss = threadss.Threadss()
 
         self.task_manager = task_manager.TaskManager(self.screen, self.board)
 
         self.stm.find_port()
         self.stm.board_connection()
+        # self.threadss.run_thread(self.stm.read_sth())
 
         self.level_number = 1
 
@@ -67,6 +70,9 @@ class Game(object):
                     if self.equipment.is_open:
                         self.equipment.remove_item()
                 if event.key == pygame.K_o:
+                    # self.threadss.run_thread(self.stm.read_sth())
+                    # self.threadss.run_thread(self.stm.write_sth('repair'))
+                    # print('tooo')
                     self.stm.write_sth("None")
         if self.equipment.is_open:            
             self.equipment.update_equip()
