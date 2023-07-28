@@ -17,7 +17,7 @@ class Equipment(object):
         # (384, 650) cords where backpack is visible
 
         self.item_list = []
-        self.cube_parts = ["Cube frame", "Cube element 1", "Cube element 2", "Cube element 3"]
+        self.cube_parts = ["Electronics element", "Battery", "Broken cube", "Resistor"]
         self.x_areas_range = [(384,447), (448, 511), (512, 575), (576, 639), (640, 703), (704, 767), (768, 831), (832, 895)]
         self.y_area_range = (650, 710)
         self.equip_size = 8

@@ -78,7 +78,7 @@ class Game(object):
             self.equipment.update_equip()
             self.equipment.get_selected_item()
             
-        if not self.item_view_window.is_visible and not self.task_manager.screen_lock:
+        if not self.item_view_window.is_visible and not self.task_manager.screen_lock and not self.equipment.is_open:
             self.board.update_board()      
 
         if self.task_manager.monitor_tasks():
