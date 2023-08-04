@@ -55,6 +55,8 @@ class Equipment(object):
         count_elements = 0
         for i in self.item_list:
             if i.name in self.cube_parts:
+                # if akcja na true:
+                #     self.item_list.remove(i)
                 count_elements += 1
             if count_elements == 4: 
                 return True
@@ -114,4 +116,3 @@ class Equipment(object):
             self.item_list.remove(self.selected_item)
             self.screen.blit(self.backpack_view, (384,650))
             self.is_selected = True
-

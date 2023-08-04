@@ -49,7 +49,7 @@ class TextBox(object):
             elif self.sentence == 'Accept the entered code':
                 if stm.write_sth("key") == "OK":
                     item_view_window.hide_item()
-                    task_manager.enable_task_action("unlock_house_door")
+                    # task_manager.enable_task_action("unlock_house_door")
                     # go to next lvl
             else:
                 print('No action with this textbox')
