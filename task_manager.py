@@ -18,6 +18,10 @@ class TaskManager(object):
                 "call_status" : False,
                 "execution_status" : False   
             },
+            "unlock_house_door" : {
+                "call_status" : False,
+                "execution_status" : False   
+            },
             "another_task" : {
                 "call_status" : False,
                 "execution_status" : False   
@@ -47,6 +51,10 @@ class TaskManager(object):
             self.action_list[action_name]["execution_status"] = True
             self.show_animation(["slide1.png"])
             # self.board.load_new_level_elements(1)
+        elif action_name == "unlock_house_door":
+            print("--- Opening house door ---")
+            self.action_list[action_name]["execution_status"] = True
+            self.show_animation(["slide2.png"])
         elif action_name == "another_task":
             return False
         else:

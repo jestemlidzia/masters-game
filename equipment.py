@@ -55,13 +55,17 @@ class Equipment(object):
         count_elements = 0
         for i in self.item_list:
             if i.name in self.cube_parts:
-                # if akcja na true:
-                #     self.item_list.remove(i)
                 count_elements += 1
             if count_elements == 4: 
                 return True
         return False
     
+    def repaired_cube(self):
+        new_list = []
+        for i in self.item_list:
+            if i.name not in self.cube_parts:
+                new_list.append(i)
+        self.item_list = new_list
         
     def show_backpack(self):
         self.last_screen = self.screen.copy()
@@ -75,7 +79,6 @@ class Equipment(object):
         self.is_open = False
 
     def selected_area(self):
-        # self.last_screenn = self.screen.copy()
         for i in range(len(self.x_areas_range)):
             if self.x_areas_range[i][0] <= pygame.mouse.get_pos()[0] <= self.x_areas_range[i][1] and self.y_area_range[0] <= pygame.mouse.get_pos()[1] <= self.y_area_range[1]:
                 self.is_selected = False
@@ -97,10 +100,7 @@ class Equipment(object):
                         self.selected_item = False
                     if self.active_area_range[0] == self.x_areas_range[area_number][0]:
                         self.selected_item = item
-                    # if self.is_selected:
-                    #     self.selected_item = False
                 area_number = area_number + 1
-            
             # else:
             #     print('Your backpack is full! Throw an item out of your backpack to free up some space!')
 

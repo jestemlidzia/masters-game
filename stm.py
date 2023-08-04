@@ -34,7 +34,8 @@ class STM(object):
             data = self.ser.readline()
             dec_data = str(data.decode('utf-8'))
             self.value = dec_data
-            print('value from stm: ', self.value)
+            print('value from stm: ', self.value.strip())
+            return self.value.strip()
         except Exception as exc:
                 print(f"Exception: {exc}")
 

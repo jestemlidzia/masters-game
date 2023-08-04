@@ -72,8 +72,9 @@ class Game(object):
                 if event.key == pygame.K_o:
                     # self.threadss.run_thread(self.stm.read_sth())
                     # self.threadss.run_thread(self.stm.write_sth('repair'))
-                    # print('tooo')
-                    self.stm.write_sth("None")
+                    # print('')
+                    self.stm.write_sth("key")
+                    # self.stm.read_sth()
         if self.equipment.is_open:            
             self.equipment.update_equip()
             self.equipment.get_selected_item()
