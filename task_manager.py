@@ -2,11 +2,20 @@ import pygame
 import os
 
 class TaskManager(object):
-    def __init__(self, screen, board):
+    def __init__(self, screen, board, equipment):
         self.screen = screen
         self.board = board
         self.action_list = self.generate_task_list()
+        self.game_flags = self.generate_game_flags()
         self.screen_lock = False
+        self.equipment = equipment
+
+    def generate_game_flags(self):
+        game_flags = {
+            "LOCK_ACTIVATED" : False,
+            "CUBE_IS_REPAIRED" : False
+        }
+        return game_flags
 
     def generate_task_list(self):
         action_list = {
@@ -16,19 +25,39 @@ class TaskManager(object):
             },
             "repair_box" : {
                 "call_status" : False,
-                "execution_status" : False   
+                "execution_status" : False
             },
             "another_task" : {
                 "call_status" : False,
-                "execution_status" : False   
+                "execution_status" : False
+            },
+            "activate_lock" : {
+                "call_status" : False,
+                "execution_status" : False
+            },
+            "unlock_house_door" : {
+                "call_status" : False,
+                "execution_status" : False
             }
         }
 
         return action_list
-    
+
+    def enable_flag(self, flag):
+        if flag in self.game_flags:
+            self.game_flags[flag] = True
+
+    def disable_flag(self, flag):
+        if flag in self.game_flags:
+            self.game_flags[flag] = False
+
     def enable_task_action(self, action_name):
         if action_name in self.action_list:
             self.action_list[action_name]["call_status"] = True
+
+    def disable_task_action(self, action_name):
+        if action_name in self.action_list:
+            self.action_list[action_name]["call_status"] = False
 
     def monitor_tasks(self):
         for action in self.action_list:
@@ -39,19 +68,43 @@ class TaskManager(object):
         if action_name == "open_secret_box":
             print("--- Opening a secret box ---")
             self.action_list[action_name]["execution_status"] = True
-            self.show_animation(["slide1.png", "slide2.png", "slide1.png", "slide3.png"])
+            self.show_animation(["slide1.png", "slide3.png"])
             self.board.load_new_level_elements(1)
             return True
         elif action_name == "repair_box":
             print("--- Secret box has been repaired ---")
             self.action_list[action_name]["execution_status"] = True
-            self.show_animation(["slide1.png"])
-            # self.board.load_new_level_elements(1)
+            self.equipment.repaired_cube()
+            self.enable_flag("CUBE_IS_REPAIRED")
+            self.show_slide("cube_is_repaired.png")
+            return False
+        elif action_name == "unlock_house_door":
+            if self.game_flags["LOCK_ACTIVATED"] and self.game_flags["CUBE_IS_REPAIRED"]:
+                print("--- The house door is opened ---")
+                self.action_list[action_name]["execution_status"] = True
+                self.show_animation(["slide1.png", "slide3.png"])
+                self.board.load_new_level_elements(4)
+                return True
+            else:
+                self.action_list[action_name]["call_status"] == False
+                return False
         elif action_name == "another_task":
             return False
         else:
             return False
-    
+
+    def show_slide(self, file):
+        self.screen_lock = True
+        last_screen = self.screen.copy()
+
+        animation_bg = pygame.image.load(os.path.join("art", file))
+        self.screen.blit(animation_bg, (0,0))
+        pygame.display.update()
+        pygame.time.wait(3000)
+        
+        self.screen.blit(last_screen, (0,0))
+        self.screen_lock = False
+
     def show_animation(self, files):
         self.screen_lock = True
         last_screen = self.screen.copy()

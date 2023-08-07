@@ -292,6 +292,21 @@
                     "ChangeSlide" : "none",
                     "InteractWith": "none",
                     "DialogText" : "none"
+                },
+                {
+                    "Name" : "Lock",
+                    "Img" : "keyboard-small.png",
+                    "FullImg" : "keyboard.png",
+                    "X-Position" : 488,
+                    "Y-Position" : 295,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "There must be a hint somewhere...",
+                    "Options" : [
+                    ]
                 }
             ]
         },
@@ -457,6 +472,214 @@
                     "FullImg" : "mint-gum.png",
                     "X-Position" : 80,
                     "Y-Position" : 450,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                }
+            ]
+        },
+        {
+            "Name" : "Chapter 3: House",
+            "BackgroungImg" : "level3-background_1.png",
+            "Items": [
+                {
+                    "Name" : "Right arrow",
+                    "Img" : "right-arrow.png",
+                    "X-Position" : 1040,
+                    "Y-Position" : 600,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : 3,
+                    "InteractWith": "none",
+                    "DialogText" : "none",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Empty food box",
+                    "Img" : "empty-food-box.png",
+                    "X-Position" : 655,
+                    "Y-Position" : 312,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Juice",
+                    "Img" : "juice.png",
+                    "X-Position" : 876,
+                    "Y-Position" : 456,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Can",
+                    "Img" : "can.png",
+                    "X-Position" : 526,
+                    "Y-Position" : 568,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Blanket",
+                    "Img" : "blanket.png",
+                    "X-Position" : 747,
+                    "Y-Position" : 250,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Today news",
+                    "Img" : "today-news-small.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 392,
+                    "Y-Position" : 402,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Cans",
+                    "Img" : "cans-small.png",
+                    "FullImg" : "cans.png",
+                    "X-Position" : 672,
+                    "Y-Position" : 431,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Chinese food",
+                    "Img" : "chinese-food.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 800,
+                    "Y-Position" : 540,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Wooden box",
+                    "Img" : "livingroom-box.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 1062,
+                    "Y-Position" : 127,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Wall photos",
+                    "Img" : "wall-photos.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 20,
+                    "Y-Position" : 24,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "The Lovers",
+                    "Img" : "lovers-book.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 1135,
+                    "Y-Position" : 253,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "The Ocean",
+                    "Img" : "ocean-book.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 1140,
+                    "Y-Position" : 315,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Family album",
+                    "Img" : "photo-album.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 1042,
+                    "Y-Position" : 202,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Letter",
+                    "Img" : "letter-small.png",
+                    "FullImg" : "mint-gum.png",
+                    "X-Position" : 118,
+                    "Y-Position" : 580,
                     "IsMovable": 0,
                     "IsClickable": 1,
                     "IsLiftable": 0,

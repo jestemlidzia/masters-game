@@ -37,7 +37,7 @@ class ItemViewingWindow(object):
             new_textbox = textbox.TextBox(self.screen, info['sentence'], info['color'], info['font'], info['size'], info['center'], info['left_top'], info['right_bottom'])
             self.textbox_list.append(new_textbox)
 
-    def show_item(self, current_item, selected_equip_item, equipment):
+    def show_item(self, current_item, selected_equip_item, equipment, task_manager):
         print("ItemViewingWindow open")
         self.current_item = current_item
         self.selected_equip_item = selected_equip_item
@@ -57,7 +57,11 @@ class ItemViewingWindow(object):
             if self.current_item.name == "Note":
                 textbox_values.append('Accept the entered code')
             else:
-                textbox_values.append('Nothing to do with it')
+                if self.current_item.name == "Lock":
+                    textbox_values.append('Use the keyboard to enter the code')
+                    task_manager.enable_flag("LOCK_ACTIVATED")
+                else:
+                    textbox_values.append('Nothing to do with it')
 
         for idx, tb in enumerate(self.textbox_list):
             tb.display_text(textbox_values[idx])

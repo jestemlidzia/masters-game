@@ -35,6 +35,8 @@ class TextBox(object):
                 item_view_window.hide_item()
                 board.remove_item_from_board(item_to_remove)
             elif self.sentence == 'I don\'t need it' or self.sentence == 'Exit':
+                if item_view_window.current_item.name == "Lock":
+                    task_manager.disable_flag("LOCK_ACTIVATED")
                 item_view_window.current_item.is_active = 0
                 item_view_window.hide_item()
             elif self.sentence == 'You can use {}'.format(item_view_window.current_item.interact_with):
@@ -45,11 +47,9 @@ class TextBox(object):
                 item_view_window.hide_item()
                 stm.write_sth("repair")
                 task_manager.enable_task_action("repair_box")
-                equipment.repaired_cube()
             elif self.sentence == 'Accept the entered code':
                 if stm.write_sth("key") == "OK":
                     item_view_window.hide_item()
-                    # task_manager.enable_task_action("unlock_house_door")
-                    # go to next lvl
+                    task_manager.enable_task_action("unlock_house_door")
             else:
                 print('No action with this textbox')
