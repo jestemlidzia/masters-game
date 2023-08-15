@@ -13,7 +13,8 @@ class TaskManager(object):
     def generate_game_flags(self):
         game_flags = {
             "LOCK_ACTIVATED" : False,
-            "CUBE_IS_REPAIRED" : False
+            "CUBE_IS_REPAIRED" : False,
+            "GARAGE_DOOR_UNLOCKED" : False
         }
         return game_flags
 
@@ -36,6 +37,10 @@ class TaskManager(object):
                 "execution_status" : False
             },
             "unlock_house_door" : {
+                "call_status" : False,
+                "execution_status" : False
+            },
+            "open_garage_door" : {
                 "call_status" : False,
                 "execution_status" : False
             }
@@ -88,6 +93,12 @@ class TaskManager(object):
             else:
                 self.action_list[action_name]["call_status"] == False
                 return False
+        elif action_name == "open_garage_door":
+            if self.game_flags["GARAGE_DOOR_UNLOCKED"]:
+                self.action_list[action_name]["execution_status"] = True
+                self.show_animation(["slide1.png"])
+                self.board.load_new_level_elements(6)
+                return True
         elif action_name == "another_task":
             return False
         else:

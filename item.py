@@ -32,3 +32,9 @@ class Item(object):
         y = self.game_item.get_height()
 
         return (x,y)
+    
+    def change_item_image(self, new_img):
+        self.img = new_img
+    
+    def change_item_full_image(self, new_full_img):
+        self.full_img = new_full_img
