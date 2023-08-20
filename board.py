@@ -9,6 +9,7 @@ class Board(object):
         self.data = json.load(f)
         f.close()
 
+        self.level_number = level_number
         self.screen = screen
         self.level_items = []
         self.taken_elements = []
@@ -34,8 +35,15 @@ class Board(object):
             new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, change_slide, interact_with, img, full_img, equip_img, dialog_text, pos)
             self.level_items.append(new_item)
 
+    def get_item_by_its_name(self, item_name):
+        for item in self.level_items:
+            if item.name == item_name:
+                return item
+            
+        return None
 
     def load_new_level_elements(self, level_number):
+        self.level_number = level_number
         self.level_items = []
         level_data = self.data['Levels'][level_number]
         self.level_name = level_data['Name']

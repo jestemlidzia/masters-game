@@ -34,7 +34,10 @@ class Item(object):
         return (x,y)
     
     def change_item_image(self, new_img):
+        print("New image: ", new_img)
         self.img = new_img
+        self.game_item = pygame.image.load(os.path.join("art", self.img))
     
     def change_item_full_image(self, new_full_img):
+        print("New full image: ", new_full_img)
         self.full_img = new_full_img

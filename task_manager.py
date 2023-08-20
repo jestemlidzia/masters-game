@@ -2,13 +2,14 @@ import pygame
 import os
 
 class TaskManager(object):
-    def __init__(self, screen, board, equipment):
+    def __init__(self, screen, board, equipment, stm):
         self.screen = screen
         self.board = board
         self.action_list = self.generate_task_list()
         self.game_flags = self.generate_game_flags()
         self.screen_lock = False
         self.equipment = equipment
+        self.stm = stm
 
     def generate_game_flags(self):
         game_flags = {
@@ -65,6 +66,21 @@ class TaskManager(object):
             self.action_list[action_name]["call_status"] = False
 
     def monitor_tasks(self):
+        if self.board.level_number == 5:
+            if "ON" == self.stm.write_sth("diode"):
+                self.enable_flag("GARAGE_DOOR_UNLOCKED")
+                item = self.board.get_item_by_its_name("Garage lock")
+                item.change_item_image("door-unlocked-small.png")
+                item.change_item_full_image("door-unlocked.png")
+            elif "OFF" == self.stm.write_sth("diode"):
+                self.disable_flag("GARAGE_DOOR_UNLOCKED")
+                item = self.board.get_item_by_its_name("Garage lock")
+                item.change_item_image("door-locked-small.png")
+                item.change_item_full_image("door-locked.png")
+            else:
+                # print('to: ', self.stm.write_sth("check_diode_status"))
+                print("Unknow status of DIODE")
+
         for action in self.action_list:
             if self.action_list[action]["call_status"] == True and self.action_list[action]["execution_status"] == False:
                 return self.execute_action(action)
