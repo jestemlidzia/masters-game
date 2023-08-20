@@ -4,7 +4,7 @@
     },
     "Levels" : [
         {
-            "Name" : "Chapter 1: Garage",
+            "Name" : "Chapter 1: The Garage",
             "BackgroungImg" : "level1-background.png",
             "Items": [
                 {
@@ -419,7 +419,7 @@
             ]
         },
         {
-            "Name" : "Chapter 2: 2c",
+            "Name" : "Chapter 2: The shop",
             "BackgroungImg" : "level2-background_3.png",
             "Items": [
                 {
@@ -484,7 +484,7 @@
             ]
         },
         {
-            "Name" : "Chapter 3: House",
+            "Name" : "Chapter 3: The Quiet House",
             "BackgroungImg" : "level3-background_1.png",
             "Items": [
                 {
@@ -692,7 +692,7 @@
             ]
         },
         {
-            "Name" : "Chapter 2: On the other side",
+            "Name" : "Chapter 3: The Garden",
             "BackgroungImg" : "level2-background_1.png",
             "Items": [
                 {
@@ -802,7 +802,7 @@
                     "DialogText" : "none"
                 },
                 {
-                    "Name" : "Garage diode",
+                    "Name" : "Garage lock",
                     "Img" : "door-locked-small.png",
                     "FullImg" : "door-locked.png",
                     "X-Position" : 1079,
@@ -819,7 +819,7 @@
             ]
         },
         {
-            "Name" : "Chapter 4: Not my garage",
+            "Name" : "Chapter 4: Look at you",
             "BackgroungImg" : "level1-background.png",
             "Items": [
                 {
@@ -835,6 +835,44 @@
                     "InteractWith": "none",
                     "DialogText" : "It's strange... No data on the guy from the bar...."
                 }
+            ]
+        },
+        {
+            "Name" : "Chapter 5: The Underground",
+            "BackgroungImg" : "level4-background.png",
+            "Items": [
+                {
+                    "Name" : "Binary code",
+                    "Img" : "binary-code-small.png",
+                    "FullImg" : "binary-code.png",
+                    "X-Position" : 100,
+                    "Y-Position" : 120,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "It's strange... No data on the guy from the bar...."
+                },
+                {
+                    "Name" : "Last lock",
+                    "Img" : "last-lock-small.png",
+                    "FullImg" : "last-lock.png",
+                    "X-Position" : 635,
+                    "Y-Position" : 323,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "It's strange... No data on the guy from the bar...."
+                }
+            ]
+        },
+        {
+            "Name" : "Chapter 5: The Secret Energy",
+            "BackgroungImg" : "level5-background.png",
+            "Items": [
             ]
         }
     ]
