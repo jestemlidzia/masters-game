@@ -25,6 +25,8 @@ class Game(object):
         self.threadss = threadss.Threadss()
 
         self.task_manager = task_manager.TaskManager(self.screen, self.board, self.equipment)
+        self.task_manager.show_dialog(["opening_dialog_1.png", "opening_dialog_2.png"])
+        self.task_manager.show_animation(["level1-slide.png"])
 
         self.stm.find_port()
         self.stm.board_connection()

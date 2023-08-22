@@ -8,9 +8,9 @@
             "BackgroungImg" : "level1-background.png",
             "Items": [
                 {
-                    "Name" : "Book",
+                    "Name" : "Notebook",
                     "Img" : "book.png",
-                    "FullImg" : "book.png",
+                    "FullImg" : "book-open.png",
                     "EquipImage" : "book-equip.png",
                     "X-Position" : 80,
                     "Y-Position" : 480,
@@ -101,7 +101,7 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "Chisel",      
-                    "DialogText" : "none"
+                    "DialogText" : "Hmm interesting... first I have to open it somehow..."
                 }
             ]
         },
@@ -388,7 +388,7 @@
                 {
                     "Name" : "Car service",
                     "Img" : "car_service.png",
-                    "FullImg" : "cube_element_3.png",
+                    "FullImg" : "car_service.png",
                     "X-Position" : 937,
                     "Y-Position" : 385,
                     "IsMovable": 0,

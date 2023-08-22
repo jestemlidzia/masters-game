@@ -73,7 +73,7 @@ class TaskManager(object):
         if action_name == "open_secret_box":
             print("--- Opening a secret box ---")
             self.action_list[action_name]["execution_status"] = True
-            self.show_animation(["slide1.png", "slide3.png"])
+            self.show_animation(["cube-slide.png", "level2-slide.png"])
             self.board.load_new_level_elements(1)
             return True
         elif action_name == "repair_box":
@@ -132,9 +132,23 @@ class TaskManager(object):
                 pygame.display.update()
                 pygame.time.wait(130)
 
-                # image = pygame.image.load('your_image.png').convert()
-                # image_rect = image.get_rect()
-                # image_rect.center = (100,100)
+        self.screen.blit(last_screen, (0,0))
+        self.screen_lock = False
 
+    def show_dialog(self, files):
+        self.screen_lock = True
+        last_screen = self.screen.copy()
+
+        for file in files:
+            dialog_bg = pygame.image.load(os.path.join("art", file))
+            dialog_effect = pygame.image.load(os.path.join("art", "dialog_effect.png"))
+            self.screen.blit(dialog_bg, (0,0))
+
+            for x in range(0, 10):
+                pygame.display.update()
+                pygame.time.wait(1000)
+                self.screen.blit(dialog_effect, (0,0))
+
+        pygame.time.wait(100)
         self.screen.blit(last_screen, (0,0))
         self.screen_lock = False
