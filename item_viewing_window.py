@@ -54,11 +54,9 @@ class ItemViewingWindow(object):
                 textbox_values.append('You can use {}'.format(self.current_item.interact_with))
             if equipment.check_cube_parts() and self.current_item.name == "Toolbox":
                 textbox_values.append('You can repair the cube')
-            if self.current_item.name == "Note":
-                textbox_values.append('Accept the entered code')
             else:
                 if self.current_item.name == "Lock":
-                    textbox_values.append('Use the keyboard to enter the code')
+                    textbox_values.append('Enter the code')
                     task_manager.enable_flag("LOCK_ACTIVATED")
                 else:
                     textbox_values.append('Nothing to do with it')

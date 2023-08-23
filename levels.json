@@ -113,7 +113,7 @@
                     "Name" : "Electronics element",
                     "Img" : "element-small.png",
                     "FullImg" : "element.png",
-                    "EquipImage" : "element-small.png",
+                    "EquipImage" : "element-equip.png",
                     "X-Position" : 1054,
                     "Y-Position" : 580,
                     "IsMovable": 0,
@@ -157,7 +157,7 @@
                     "Name" : "Battery",
                     "Img" : "battery-small.png",
                     "FullImg" : "battery.png",
-                    "EquipImage" : "battery-small.png",
+                    "EquipImage" : "battery-equip.png",
                     "X-Position" : 809,
                     "Y-Position" : 460,
                     "IsMovable": 0,
@@ -201,7 +201,7 @@
                     "Name" : "Broken cube",
                     "Img" : "broken-cube-small.png",
                     "FullImg" : "broken-cube.png",
-                    "EquipImage" : "broken-cube-small.png",
+                    "EquipImage" : "broken-cube-equip.png",
                     "X-Position" : 615,
                     "Y-Position" : 590,
                     "IsMovable": 0,
@@ -388,7 +388,7 @@
                 {
                     "Name" : "Car service",
                     "Img" : "car_service.png",
-                    "FullImg" : "car_service.png",
+                    "FullImg" : "car_service-banner.png",
                     "X-Position" : 937,
                     "Y-Position" : 385,
                     "IsMovable": 0,
@@ -396,7 +396,7 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "Another quirky element, I'd better keep it",
+                    "DialogText" : "Monty and cars? Where is his lamp store?",
                     "Options" : [
                     ]
                 },
@@ -404,7 +404,7 @@
                     "Name" : "Resistor",
                     "Img" : "resistor.png",
                     "FullImg" : "resistor-big.png",
-                    "EquipImage" : "resistor.png",
+                    "EquipImage" : "resistor-equip.png",
                     "X-Position" : 830,
                     "Y-Position" : 650,
                     "IsMovable": 0,
@@ -449,7 +449,7 @@
                     "IsActive": 0,
                     "ChangeSlide" : "none",
                     "InteractWith": "none",
-                    "DialogText" : "What are you doing here?"
+                    "DialogText" : "Am I missing something?"
                 },
                 {
                     "Name" : "Newspapers",
@@ -852,10 +852,10 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "It's strange... No data on the guy from the bar...."
+                    "DialogText" : "This may be a clue... I'll try to figure it out."
                 },
                 {
-                    "Name" : "Last lock",
+                    "Name" : "Tunnel lock",
                     "Img" : "last-lock-small.png",
                     "FullImg" : "last-lock.png",
                     "X-Position" : 635,
@@ -865,7 +865,7 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "It's strange... No data on the guy from the bar...."
+                    "DialogText" : "There is no keyboard..., but there is a sensor!"
                 }
             ]
         },
