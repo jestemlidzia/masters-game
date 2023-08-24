@@ -557,7 +557,7 @@
                 {
                     "Name" : "Today news",
                     "Img" : "today-news-small.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "article.png",
                     "X-Position" : 392,
                     "Y-Position" : 402,
                     "IsMovable": 0,
@@ -565,7 +565,7 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Oh... wait a minute... where are Tina and Elie?",
                     "Options" : [
                     ]
                 },
@@ -580,44 +580,46 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Who made such a mess?",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "Chinese food",
                     "Img" : "chinese-food.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "paper-ball.png",
+                    "EquipImage" : "part2-equip.png",
                     "X-Position" : 800,
                     "Y-Position" : 540,
                     "IsMovable": 0,
                     "IsClickable": 1,
-                    "IsLiftable": 0,
+                    "IsLiftable": 1,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Hmm... doesn't look like food...",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "Wooden box",
                     "Img" : "livingroom-box.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "paper-in-box.png",
+                    "EquipImage" : "part3-equip.png",
                     "X-Position" : 1062,
                     "Y-Position" : 127,
                     "IsMovable": 0,
                     "IsClickable": 1,
-                    "IsLiftable": 0,
+                    "IsLiftable": 1,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Oh, I found something",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "Wall photos",
                     "Img" : "wall-photos.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "canion.png",
                     "X-Position" : 20,
                     "Y-Position" : 24,
                     "IsMovable": 0,
@@ -625,14 +627,14 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Canyon? We're not supposed to go until next week...",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "The Lovers",
                     "Img" : "lovers-book.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "lovers-opened.png",
                     "X-Position" : 1135,
                     "Y-Position" : 253,
                     "IsMovable": 0,
@@ -640,29 +642,30 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Whose book is it?",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "The Ocean",
                     "Img" : "ocean-book.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "ocean-opened.png",
+                    "EquipImage" : "part1-equip.png",
                     "X-Position" : 1140,
                     "Y-Position" : 315,
                     "IsMovable": 0,
                     "IsClickable": 1,
-                    "IsLiftable": 0,
+                    "IsLiftable": 1,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "I better take it",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "Family album",
                     "Img" : "photo-album.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "wife-photo.png",
                     "X-Position" : 1042,
                     "Y-Position" : 202,
                     "IsMovable": 0,
@@ -670,14 +673,14 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Eva never had blond hair...",
                     "Options" : [
                     ]
                 },
                 {
                     "Name" : "Letter",
                     "Img" : "letter-small.png",
-                    "FullImg" : "mint-gum.png",
+                    "FullImg" : "letter.png",
                     "X-Position" : 118,
                     "Y-Position" : 580,
                     "IsMovable": 0,
@@ -685,7 +688,22 @@
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "I think I've seen this symbol somewhere before...",
+                    "DialogText" : "Oh no! Something is really wrong here",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Tape",
+                    "Img" : "cabinet.png",
+                    "FullImg" : "tape.png",
+                    "X-Position" : 137,
+                    "Y-Position" : 323,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I think I know how to use it",
                     "Options" : [
                     ]
                 }
