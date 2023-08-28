@@ -54,6 +54,10 @@ class TextBox(object):
             elif self.sentence == 'Enter the garage':
                 item_view_window.hide_item()
                 task_manager.enable_task_action("open_garage_door")
+            elif self.sentence == 'Enter the room':
+                if stm.write_sth("lcd") == "YES":
+                    item_view_window.hide_item()
+                    task_manager.enable_task_action("open_room_door")
             elif self.sentence == "You can go to this place":
                 item_view_window.hide_item()
                 task_manager.enable_task_action("follow_the_map")

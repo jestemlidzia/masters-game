@@ -16,6 +16,7 @@ class TaskManager(object):
             "LOCK_ACTIVATED" : False,
             "CUBE_IS_REPAIRED" : False,
             "GARAGE_DOOR_UNLOCKED" : False,
+            "ROOM_DOOR_UNLOCKED" : False
             "CHAT_WITH_SAM_ENDED" : False,
             "SOUND_ENERGY_COLLECTED" : False,
             "INDICATOR_LEVEL" : 0
@@ -48,6 +49,10 @@ class TaskManager(object):
                 "call_status" : False,
                 "execution_status" : False
             },
+            "open_room_door" : {
+                "call_status" : False,
+                "execution_status" : False
+            }
             "follow_the_map" :  {
                 "call_status" : False,
                 "execution_status" : False
@@ -133,6 +138,12 @@ class TaskManager(object):
                 self.action_list[action_name]["execution_status"] = True
                 self.show_animation(["slide1.png"])
                 self.board.load_new_level_elements(6)
+                return True
+        elif action_name == "open_room_door":
+            if self.game_flags["ROOM_DOOR_UNLOCKED"]:
+                self.action_list[action_name]["execution_status"] = True
+                self.show_animation(["slide1.png"])
+                self.board.load_new_level_elements(8)
                 return True
         elif action_name == "follow_the_map":
             print("--- Tunnel level is active ---")

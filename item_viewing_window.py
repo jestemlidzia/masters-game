@@ -60,6 +60,9 @@ class ItemViewingWindow(object):
                 task_manager.enable_flag("LOCK_ACTIVATED")
             elif self.current_item.name == "Garage lock" and task_manager.game_flags["GARAGE_DOOR_UNLOCKED"]:
                     textbox_values.append('Enter the garage')
+            elif self.current_item.name == "Last lock":
+                textbox_values.append('Enter the room')
+                task_manager.enable_flag("ROOM_DOOR_UNLOCKED")
             elif self.current_item.name == "Map" and task_manager.game_flags["CHAT_WITH_SAM_ENDED"]:
                 textbox_values.append("You can go to this place")
             elif self.current_item.name == "Energy box" and task_manager.game_flags["SOUND_ENERGY_COLLECTED"]:
