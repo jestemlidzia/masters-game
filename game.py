@@ -27,7 +27,10 @@ class Game(object):
         self.stm.find_port()
         self.stm.board_connection()
         # self.threadss.run_thread(self.stm.read_sth())
+
         self.task_manager = task_manager.TaskManager(self.screen, self.board, self.equipment, self.stm)
+        self.task_manager.show_dialog(["opening_dialog_1.png", "opening_dialog_2.png"])
+        self.task_manager.show_animation(["level1-slide.png"])
 
         self.level_number = 1
 
@@ -47,8 +50,12 @@ class Game(object):
                             if self.equipment.is_open:
                                 self.equipment.hide_backpack()
                             get_selected_item = self.equipment.get_selected_item()
-                            self.item_view_window.show_item(board_item, get_selected_item, self.equipment, self.task_manager)
-                            board_item.is_active = 1
+                            if board_item.name == "Sam":
+                                self.task_manager.show_dialog(["dialog_3.png"])
+                                self.task_manager.enable_flag("CHAT_WITH_SAM_ENDED")
+                            else:
+                                self.item_view_window.show_item(board_item, get_selected_item, self.equipment, self.task_manager)
+                                board_item.is_active = 1
                         if is_collidate and board_item.is_clickable == 0:
                             if board_item.change_slide != "none":
                                 self.board.load_new_level_elements(board_item.change_slide)
