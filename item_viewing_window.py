@@ -50,20 +50,22 @@ class ItemViewingWindow(object):
                 textbox_values += ['Take this item', 'I don\'t need it']
             else:
                 textbox_values += ['---', 'Exit']
+
             if self.current_item.interact_with == self.selected_equip_item:           # sprawdzenie czy po wybraniu np chisel z plecaka, zmienia sie akcja na kostce
                 textbox_values.append('You can use {}'.format(self.current_item.interact_with))
-            if equipment.check_cube_parts() and self.current_item.name == "Toolbox":
+            elif equipment.check_cube_parts() and self.current_item.name == "Toolbox":
                 textbox_values.append('You can repair the cube')
-            # if self.current_item.name == "Note":
-            #     textbox_values.append('Accept the entered code')
-            else:
-                if self.current_item.name == "Lock":
-                    textbox_values.append('Use the keyboard to enter the code')
-                    task_manager.enable_flag("LOCK_ACTIVATED")
-                elif self.current_item.name == "Garage lock" and task_manager.game_flags["GARAGE_DOOR_UNLOCKED"]:
+            elif self.current_item.name == "Lock":
+                textbox_values.append('Enter the code')
+                task_manager.enable_flag("LOCK_ACTIVATED")
+            elif self.current_item.name == "Garage lock" and task_manager.game_flags["GARAGE_DOOR_UNLOCKED"]:
                     textbox_values.append('Enter the garage')
-                else:
-                    textbox_values.append('Nothing to do with it')
+            elif self.current_item.name == "Map" and task_manager.game_flags["CHAT_WITH_SAM_ENDED"]:
+                textbox_values.append("You can go to this place")
+            elif self.current_item.name == "Energy box" and task_manager.game_flags["SOUND_ENERGY_COLLECTED"]:
+                textbox_values.append("Place the cube and return home")
+            else:
+                textbox_values.append('Nothing to do with it')
 
         for idx, tb in enumerate(self.textbox_list):
             tb.display_text(textbox_values[idx])
