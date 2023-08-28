@@ -50,8 +50,12 @@ class Game(object):
                             if self.equipment.is_open:
                                 self.equipment.hide_backpack()
                             get_selected_item = self.equipment.get_selected_item()
-                            self.item_view_window.show_item(board_item, get_selected_item, self.equipment, self.task_manager)
-                            board_item.is_active = 1
+                            if board_item.name == "Sam":
+                                self.task_manager.show_dialog(["dialog_3.png"])
+                                self.task_manager.enable_flag("CHAT_WITH_SAM_ENDED")
+                            else:
+                                self.item_view_window.show_item(board_item, get_selected_item, self.equipment, self.task_manager)
+                                board_item.is_active = 1
                         if is_collidate and board_item.is_clickable == 0:
                             if board_item.change_slide != "none":
                                 self.board.load_new_level_elements(board_item.change_slide)

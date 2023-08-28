@@ -51,5 +51,11 @@ class TextBox(object):
                 if stm.write_sth("key") == "OK":
                     item_view_window.hide_item()
                     task_manager.enable_task_action("unlock_house_door")
+            elif self.sentence == "You can go to this place":
+                item_view_window.hide_item()
+                task_manager.enable_task_action("follow_the_map")
+            elif self.sentence == "Place the cube and return home":
+                item_view_window.hide_item()
+                task_manager.enable_task_action("finish_game")
             else:
                 print('No action with this textbox')

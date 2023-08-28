@@ -841,17 +841,47 @@
             "BackgroungImg" : "level1-background.png",
             "Items": [
                 {
-                    "Name" : "PC",
+                    "Name" : "PC2",
                     "Img" : "PC-small.png",
-                    "FullImg" : "PC.png",
                     "X-Position" : 640,
                     "Y-Position" : 230,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                },
+                {
+                    "Name" : "Sam",
+                    "Img" : "man.png",
+                    "FullImg" : "stone-1.png",
+                    "X-Position" : 888,
+                    "Y-Position" : 370,
                     "IsMovable": 0,
                     "IsClickable": 1,
                     "IsLiftable": 0,
                     "IsActive": 0,
                     "InteractWith": "none",
-                    "DialogText" : "It's strange... No data on the guy from the bar...."
+                    "DialogText" : "Broken wires.. Maybe I can fix it",
+                    "Options" : [
+                    ]
+                },
+                {
+                    "Name" : "Map",
+                    "Img" : "map-small.png",
+                    "FullImg" : "map.png",
+                    "X-Position" : 350,
+                    "Y-Position" : 120,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I have to go to this place",
+                    "Options" : [
+                    ]
                 }
             ]
         },
@@ -891,6 +921,45 @@
             "Name" : "Chapter 5: The Secret Energy",
             "BackgroungImg" : "level5-background.png",
             "Items": [
+                {
+                    "Name" : "Lab note",
+                    "Img" : "audio-note-small.png",
+                    "FullImg" : "audio-note.png",
+                    "X-Position" : 770,
+                    "Y-Position" : 548,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "Hmm is it something important?"
+                },
+                {
+                    "Name" : "Energy box",
+                    "Img" : "energy-box-closed-small.png",
+                    "FullImg" : "energy-box-closed.png",
+                    "X-Position" : 270,
+                    "Y-Position" : 305,
+                    "IsMovable": 0,
+                    "IsClickable": 1,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "InteractWith": "none",
+                    "DialogText" : "I have to open it"
+                },
+                {
+                    "Name" : "Indicator",
+                    "Img" : "scale-1.png",
+                    "X-Position" : 440,
+                    "Y-Position" : 308,
+                    "IsMovable": 0,
+                    "IsClickable": 0,
+                    "IsLiftable": 0,
+                    "IsActive": 0,
+                    "ChangeSlide" : "none",
+                    "InteractWith": "none",
+                    "DialogText" : "none"
+                }
             ]
         }
     ]

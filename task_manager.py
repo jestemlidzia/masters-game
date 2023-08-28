@@ -14,7 +14,10 @@ class TaskManager(object):
         game_flags = {
             "LOCK_ACTIVATED" : False,
             "CUBE_IS_REPAIRED" : False,
-            "GARAGE_DOOR_UNLOCKED" : False
+            "GARAGE_DOOR_UNLOCKED" : False,
+            "CHAT_WITH_SAM_ENDED" : False,
+            "SOUND_ENERGY_COLLECTED" : False,
+            "INDICATOR_LEVEL" : 0
         }
         return game_flags
 
@@ -41,6 +44,22 @@ class TaskManager(object):
                 "execution_status" : False
             },
             "open_garage_door" : {
+                "call_status" : False,
+                "execution_status" : False
+            },
+            "follow_the_map" :  {
+                "call_status" : False,
+                "execution_status" : False
+            },
+            "increase_indicator_level" :  {
+                "call_status" : False,
+                "execution_status" : False
+            },
+            "unlock_energy_box" :  {
+                "call_status" : False,
+                "execution_status" : False
+            },
+            "finish_game" :  {
                 "call_status" : False,
                 "execution_status" : False
             }
@@ -99,6 +118,34 @@ class TaskManager(object):
                 self.show_animation(["slide1.png"])
                 self.board.load_new_level_elements(6)
                 return True
+        elif action_name == "follow_the_map":
+            print("--- Tunnel level is active ---")
+            self.action_list[action_name]["execution_status"] = True
+            self.board.load_new_level_elements(7)
+            return True
+        elif action_name == "increase_indicator_level":
+            if self.game_flags["INDICATOR_LEVEL"] == 2:
+                self.enable_flag("SOUND_ENERGY_COLLECTED")
+                self.action_list[action_name]["execution_status"] = True
+            else:
+                self.action_list[action_name]["call_status"] == False
+                self.enable_task_action("unlock_energy_box")
+            self.game_flags["INDICATOR_LEVEL"] += 1
+            item = self.board.get_item_by_its_name("Indicator")
+            item.change_item_image("scale" + str(self.game_flags["INDICATOR_LEVEL"]) + ".png")
+            return False
+        elif action_name == "unlock_energy_box":
+            item = self.board.get_item_by_its_name("Energy box")
+            item.change_item_image("energy-box-opened.png")
+            item.change_item_full_image("door-unlocked.png")
+            item.dialog_text = ("Now I can use it")
+            return False
+        elif action_name == "finish_game":
+            print("--- Game is ended ---")
+            self.action_list[action_name]["execution_status"] = True
+            self.show_slide(["ending_slide.png"])
+            self.show_animation(["the-end.png"])
+            return False
         elif action_name == "another_task":
             return False
         else:
