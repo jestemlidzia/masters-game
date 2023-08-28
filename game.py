@@ -18,19 +18,19 @@ class Game(object):
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width,self.height))
 
-        self.board = board.Board(self.screen, 0)
+        self.board = board.Board(self.screen, 4)
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
         self.stm = stm.STM()
         self.threadss = threadss.Threadss()
 
-        self.task_manager = task_manager.TaskManager(self.screen, self.board, self.equipment)
-        self.task_manager.show_dialog(["opening_dialog_1.png", "opening_dialog_2.png"])
-        self.task_manager.show_animation(["level1-slide.png"])
-
         self.stm.find_port()
         self.stm.board_connection()
-        self.threadss.run_thread(self.stm.read_sth())
+        # self.threadss.run_thread(self.stm.read_sth())
+
+        self.task_manager = task_manager.TaskManager(self.screen, self.board, self.equipment, self.stm)
+        self.task_manager.show_dialog(["opening_dialog_1.png", "opening_dialog_2.png"])
+        self.task_manager.show_animation(["level1-slide.png"])
 
         self.level_number = 1
 
@@ -76,9 +76,10 @@ class Game(object):
                     if self.equipment.is_open:
                         self.equipment.remove_item()
                 if event.key == pygame.K_o:
+                    self.stm.write_sth('diode')
                     # self.threadss.run_thread(self.stm.read_sth())
                     # self.threadss.run_thread(self.stm.write_sth('repair'))
-                    self.stm.write_sth("key")
+                    # self.stm.write_sth("key")
 
         if self.equipment.is_open:            
             self.equipment.update_equip()
@@ -89,13 +90,14 @@ class Game(object):
 
         if self.task_manager.monitor_tasks():
             self.change_level()
+ 
 
         pygame.display.update()
         self.clock.tick(60)
 
     def change_level(self):
         print('Next level')
-        self.level_number += 1
+        #self.level_number += 1
         print("NOWY SCREEN")
         # self.screen = new_screen
         #update bg, new_items = new board
