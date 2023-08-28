@@ -47,7 +47,7 @@ class TextBox(object):
                 item_view_window.hide_item()
                 stm.write_sth("repair")
                 task_manager.enable_task_action("repair_box")
-            elif self.sentence == 'Use the keyboard to enter the code':
+            elif self.sentence == 'Enter the code':
                 if stm.write_sth("key") == "OK":
                     item_view_window.hide_item()
                     task_manager.enable_task_action("unlock_house_door")

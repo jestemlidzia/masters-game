@@ -949,7 +949,7 @@
                 },
                 {
                     "Name" : "Indicator",
-                    "Img" : "scale-1.png",
+                    "Img" : "scale-0.png",
                     "X-Position" : 440,
                     "Y-Position" : 308,
                     "IsMovable": 0,

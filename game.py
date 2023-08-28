@@ -18,7 +18,7 @@ class Game(object):
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width,self.height))
 
-        self.board = board.Board(self.screen, 7)
+        self.board = board.Board(self.screen, 0)
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
         self.stm = stm.STM()
