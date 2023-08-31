@@ -39,23 +39,27 @@ class ItemViewingWindow(object):
 
     def show_item(self, current_item, selected_equip_item, equipment, task_manager):
         print("ItemViewingWindow open")
+        print(self.current_item)
         self.current_item = current_item
         self.selected_equip_item = selected_equip_item
         self.is_visible = True
         self.last_screen = self.screen.copy()
         self.screen.blit(self.window_bg, (0,0))
         textbox_values = [self.current_item.name, self.current_item.dialog_text]
+        print("1111", textbox_values)
         if self.current_item.is_clickable:
             if self.current_item.is_liftable:
                 textbox_values += ['Take this item', 'I don\'t need it']
             else:
                 textbox_values += ['---', 'Exit']
 
-            if self.current_item.interact_with == self.selected_equip_item:           # sprawdzenie czy po wybraniu np chisel z plecaka, zmienia sie akcja na kostce
+            if self.current_item.name == "Energy box" and task_manager.game_flags["SOUND_ENERGY_COLLECTED"] and self.current_item.interact_with == self.selected_equip_item:
+                textbox_values.append("Use the cube and return home")
+            elif self.current_item.interact_with == self.selected_equip_item and self.current_item.name != "Energy box":           # sprawdzenie czy po wybraniu np chisel z plecaka, zmienia sie akcja na kostce
                 textbox_values.append('You can use {}'.format(self.current_item.interact_with))
-            elif equipment.check_cube_parts() and self.current_item.name == "Toolbox":
+            elif equipment.check_parts(1) and self.current_item.name == "Toolbox":
                 textbox_values.append('You can repair the cube')
-            elif self.current_item.name == "Lock":
+            elif self.current_item.name == "Lock" and equipment.check_item_in_backpack("Repaired cube"):
                 textbox_values.append('Enter the code')
                 task_manager.enable_flag("LOCK_ACTIVATED")
             elif self.current_item.name == "Garage lock" and task_manager.game_flags["GARAGE_DOOR_UNLOCKED"]:
@@ -65,12 +69,13 @@ class ItemViewingWindow(object):
                 task_manager.enable_flag("ROOM_DOOR_UNLOCKED")
             elif self.current_item.name == "Map" and task_manager.game_flags["CHAT_WITH_SAM_ENDED"]:
                 textbox_values.append("You can go to this place")
-            elif self.current_item.name == "Energy box" and task_manager.game_flags["SOUND_ENERGY_COLLECTED"]:
-                textbox_values.append("Place the cube and return home")
+            elif equipment.check_parts(2) and self.current_item.name == "Tape":
+                textbox_values.append("You can tape the scheme")
             else:
                 textbox_values.append('Nothing to do with it')
-
+        print("2222", textbox_values)
         for idx, tb in enumerate(self.textbox_list):
+            print(tb)
             tb.display_text(textbox_values[idx])
 
         showing_item = pygame.image.load(os.path.join("art", self.current_item.full_img))

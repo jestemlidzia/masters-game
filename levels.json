@@ -223,7 +223,7 @@
                     "IsClickable": 1,
                     "IsLiftable": 0,
                     "IsActive": 0,
-                    "InteractWith": "none",
+                    "InteractWith": "Repaired cube",
                     "DialogText" : "Who left my tool box here?",
                     "Options" : [
                     ]
@@ -944,7 +944,7 @@
                     "IsClickable": 1,
                     "IsLiftable": 0,
                     "IsActive": 0,
-                    "InteractWith": "none",
+                    "InteractWith": "Repaired cube",
                     "DialogText" : "I have to open it"
                 },
                 {

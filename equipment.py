@@ -18,6 +18,9 @@ class Equipment(object):
 
         self.item_list = []
         self.cube_parts = ["Electronics element", "Battery", "Broken cube", "Resistor"]
+        self.scheme_parts = ["Chinese food", "Wooden box", "The Ocean"]
+        self.d = {}
+
         self.x_areas_range = [(384,447), (448, 511), (512, 575), (576, 639), (640, 703), (704, 767), (768, 831), (832, 895)]
         self.y_area_range = (650, 710)
         self.equip_size = 8
@@ -50,24 +53,29 @@ class Equipment(object):
         else:
             print('There is no {} in the backpack'.format(item_name))
             return False
-        
-    def check_cube_parts(self):
+
+    
+    def check_parts(self, number):
         count_elements = 0
+        parts = self.cube_parts if number == 1 else self.scheme_parts
         for i in self.item_list:
-            if i.name in self.cube_parts:
-                # if akcja na true:
-                #     self.item_list.remove(i)
+            if i.name in parts:
                 count_elements += 1
-            if count_elements == 4: 
+            if count_elements == len(parts):
                 return True
         return False
+
     
-    def repaired_cube(self):
+    def repaired(self, number):
         new_list = []
+        parts = self.cube_parts if number == 1 else self.scheme_parts
         for i in self.item_list:
-            if i.name not in self.cube_parts:
+            if i.name not in parts:
                 new_list.append(i)
+        # new_list.append() 
         self.item_list = new_list
+
+
         
     def show_backpack(self):
         self.last_screen = self.screen.copy()
@@ -106,11 +114,18 @@ class Equipment(object):
             # else:
             #     print('Your backpack is full! Throw an item out of your backpack to free up some space!')
 
-    def get_selected_item(self):
+    def get_selected_item_name(self):
         if self.selected_item != False:
             print('The {} was selected'.format(self.selected_item.name))
             return self.selected_item.name
+        return False
 
+    def get_selected_item(self):
+        if self.selected_item != False:
+            print('The {} was selected'.format(self.selected_item.name))
+            return self.selected_item
+        return False
+        
     def remove_item(self):
         if self.selected_item != False and len(self.item_list) != 0:
             self.item_list.remove(self.selected_item)

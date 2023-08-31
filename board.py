@@ -35,6 +35,23 @@ class Board(object):
             new_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, change_slide, interact_with, img, full_img, equip_img, dialog_text, pos)
             self.level_items.append(new_item)
 
+    def generate_item(self, item_name, item_equip, item_full_img, item_dialog):
+        name = item_name
+        img = "cube-small.png"
+        pos = (0, 0)
+        is_movable = None
+        is_clickable = 1
+        is_liftable = 0
+        is_active = None
+        change_slide = None
+        interact_with = "none"
+        full_img = item_full_img
+        equip_img = item_equip
+        dialog_text = item_dialog
+        generated_item = item.Item(self.screen, name, is_movable, is_clickable, is_liftable, is_active, change_slide, interact_with, img, full_img, equip_img, dialog_text, pos)
+        return generated_item
+
+
     def get_item_by_its_name(self, item_name):
         for item in self.level_items:
             if item.name == item_name:

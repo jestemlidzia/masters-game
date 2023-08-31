@@ -46,6 +46,7 @@ class TextBox(object):
             elif self.sentence == 'You can repair the cube':
                 item_view_window.hide_item()
                 stm.write_sth("repair")
+                equipment.add_item_to_equipment(board.generate_item("Repaired cube", "broken-cube-equip.png", "cube.png", "Repaired, I hope it will work"))
                 task_manager.enable_task_action("repair_box")
             elif self.sentence == 'Enter the code':
                 if stm.write_sth("key") == "OK":
@@ -61,8 +62,12 @@ class TextBox(object):
             elif self.sentence == "You can go to this place":
                 item_view_window.hide_item()
                 task_manager.enable_task_action("follow_the_map")
-            elif self.sentence == "Place the cube and return home":
+            elif self.sentence == "Use the cube and return home":
                 item_view_window.hide_item()
                 task_manager.enable_task_action("finish_game")
+            elif self.sentence == "You can tape the scheme":
+                item_view_window.hide_item()
+                equipment.add_item_to_equipment(board.generate_item("Repaired scheme", "note-small.png", "elec-scheme.png", "Ok I need to wire it up properly"))
+                task_manager.enable_task_action("tape_scheme")
             else:
                 print('No action with this textbox')
