@@ -5,7 +5,6 @@ import equipment
 import item_viewing_window
 import task_manager
 import stm
-import threadss
 
 class Game(object):
     def __init__(self):
@@ -18,7 +17,7 @@ class Game(object):
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width,self.height))
 
-        self.board = board.Board(self.screen, 4)
+        self.board = board.Board(self.screen, 0)
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
         self.stm = stm.STM()
@@ -26,11 +25,10 @@ class Game(object):
 
         self.stm.find_port()
         self.stm.board_connection()
-        # self.threadss.run_thread(self.stm.read_sth())
 
         self.task_manager = task_manager.TaskManager(self.screen, self.board, self.equipment, self.stm)
-        # self.task_manager.show_dialog(["opening_dialog_1.png", "opening_dialog_2.png"])
-        # self.task_manager.show_animation(["level1-slide.png"])
+        self.task_manager.show_dialog(["opening_dialog_1.png", "opening_dialog_2.png"])
+        self.task_manager.show_animation(["level1-slide.png"])
 
         self.level_number = 1
 

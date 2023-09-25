@@ -151,7 +151,7 @@ class TaskManager(object):
             self.action_list[action_name]["execution_status"] = True
             self.equipment.repaired(2)
             self.enable_flag("SCHEME_IS_TAPED")
-            self.show_slide("cube_is_repaired.png")
+            self.show_slide("schematic_is_repaired.png")
         elif action_name == "open_garage_door":
             if self.game_flags["GARAGE_DOOR_UNLOCKED"]:
                 self.action_list[action_name]["execution_status"] = True
