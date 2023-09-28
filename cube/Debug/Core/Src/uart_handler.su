@@ -1,0 +1,8 @@
+../Core/Src/uart_handler.c:26:5:__io_putchar	24	static
+../Core/Src/uart_handler.c:38:6:UART_PutChar	24	static
+../Core/Src/uart_handler.c:56:8:UART_WriteData	24	static
+../Core/Src/uart_handler.c:69:8:UART_WriteString	16	static
+../Core/Src/uart_handler.c:74:6:UART_GetChar	24	static
+../Core/Src/uart_handler.c:80:8:UART_ReadData	24	static
+../Core/Src/uart_handler.c:97:6:char_append	16	static
+../Core/Src/uart_handler.c:109:6:UART_ReadResponse	16	static

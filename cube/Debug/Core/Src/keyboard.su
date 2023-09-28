@@ -1,0 +1,2 @@
+../Core/Src/keyboard.c:5:7:read_keyboard	8	static
+../Core/Src/keyboard.c:162:7:read_result	24	static

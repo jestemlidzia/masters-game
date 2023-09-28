@@ -21,7 +21,6 @@ class Game(object):
         self.equipment = equipment.Equipment(self.screen, 0)
         self.item_view_window = item_viewing_window.ItemViewingWindow(self.screen)
         self.stm = stm.STM()
-        self.threadss = threadss.Threadss()
 
         self.stm.find_port()
         self.stm.board_connection()
