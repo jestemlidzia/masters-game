@@ -1,7 +1,10 @@
-import item
-import pygame, os
-import json
+import pygame
+import os
 import board
+
+BACKPACK_VIEW_PATH = os.path.join("art", 'equip.png')
+ACTIVE_AREA_VIEW_PATH = os.path.join("art", 'active-box.png')
+INACTIVE_AREA_VIEW_PATH = os.path.join("art", 'inactive-box.png')
 
 class Equipment(object):
     def __init__(self, screen, level_number):
@@ -9,12 +12,11 @@ class Equipment(object):
         self.screen = screen
         self.board = board.Board(self.screen, 0)
 
-        self.backpack_view = pygame.image.load(os.path.join("art", 'equip.png'))
-        self.active_area_view = pygame.image.load(os.path.join("art", 'active-box.png'))
-        self.inactive_area_view = pygame.image.load(os.path.join("art", 'inactive-box.png'))
+        self.backpack_view = pygame.image.load(BACKPACK_VIEW_PATH)
+        self.active_area_view = pygame.image.load(ACTIVE_AREA_VIEW_PATH)
+        self.inactive_area_view = pygame.image.load(INACTIVE_AREA_VIEW_PATH)
 
         self.screen.blit(self.backpack_view, (384,720))
-        # (384, 650) cords where backpack is visible
 
         self.item_list = []
         self.cube_parts = ["Electronics element", "Battery", "Broken cube", "Resistor"]
@@ -53,7 +55,6 @@ class Equipment(object):
         else:
             print('There is no {} in the backpack'.format(item_name))
             return False
-
     
     def check_parts(self, number):
         count_elements = 0
@@ -65,17 +66,13 @@ class Equipment(object):
                 return True
         return False
 
-    
     def repaired(self, number):
         new_list = []
         parts = self.cube_parts if number == 1 else self.scheme_parts
         for i in self.item_list:
             if i.name not in parts:
                 new_list.append(i)
-        # new_list.append() 
         self.item_list = new_list
-
-
         
     def show_backpack(self):
         self.last_screen = self.screen.copy()
@@ -106,26 +103,18 @@ class Equipment(object):
                 showing_taken_item = pygame.image.load(os.path.join("art", item.equip_img))
                 self.screen.blit(showing_taken_item, (self.x_areas_range[area_number][0]+20,self.y_area_range[0]+20))
                 if self.active_area_range != False:
-                    if self.active_area_range[0] > self.x_areas_range[area_number][0] or self.is_selected:          # > to odkliknięcie zaznaczonego elementu
+                    if self.active_area_range[0] > self.x_areas_range[area_number][0] or self.is_selected:
                         self.selected_item = False
                     if self.active_area_range[0] == self.x_areas_range[area_number][0]:
                         self.selected_item = item
                 area_number = area_number + 1
-            # else:
-            #     print('Your backpack is full! Throw an item out of your backpack to free up some space!')
 
     def get_selected_item_name(self):
-        if self.selected_item != False:
-            print('The {} was selected'.format(self.selected_item.name))
-            return self.selected_item.name
-        return False
+        return self.selected_item.name if self.selected_item else False
 
     def get_selected_item(self):
-        if self.selected_item != False:
-            print('The {} was selected'.format(self.selected_item.name))
-            return self.selected_item
-        return False
-        
+        return self.selected_item if self.selected_item else False
+
     def remove_item(self):
         if self.selected_item != False and len(self.item_list) != 0:
             self.item_list.remove(self.selected_item)

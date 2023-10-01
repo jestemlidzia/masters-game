@@ -14,14 +14,11 @@ class STM(object):
         for device in ports:
             self.ports_list.append(device.name)
             print(device.name)
-            # self.port_box.addItems([str(device)])
 
     def board_connection(self):
         print('Select com port and baud rate: COM3, 115200')
         try:
             self.ser = serial.Serial(port='COM3', baudrate=115200, timeout=None)
-            # self.ser = serial.Serial("COM3", "115200", timeout=None)
-            print('weszlo')
             return 1
         except Exception as exc:
             print(f"Exception: {exc}")
@@ -48,12 +45,7 @@ class STM(object):
         except Exception as exc:
                 print(f"Exception: {exc}")
 
-
     def updd(self):
         self.find_port()
         if self.board_connection():
             self.write_sth()
-
-
-# gee = STM()
-# gee.updd()
