@@ -1,7 +1,12 @@
-import pygame, os
+import pygame
+import os
 
 class Item(object):
-    def __init__(self, screen, name, is_movable, is_clickable, is_liftable, is_active, change_slide, interact_with, img, full_img, equip_img, dialog_text, position = (0,0)):
+    ART_PATH = "art"
+
+    def __init__(self, screen, name, is_movable, is_clickable, is_liftable, is_active,
+                change_slide, interact_with, img, full_img, equip_img, dialog_text,
+                position = (0,0)):
         self.screen = screen
         self.name = name
         self.is_movable = is_movable
@@ -15,7 +20,7 @@ class Item(object):
         self.equip_img = equip_img
         self.position = position
         self.dialog_text = dialog_text
-        self.game_item = pygame.image.load(os.path.join("art", img))
+        self.game_item = pygame.image.load(os.path.join(self.ART_PATH, img))
         self.screen.blit(self.game_item, self.position)
 
     def update_item(self):
@@ -30,13 +35,12 @@ class Item(object):
     def get_image_size(self):
         x = self.game_item.get_width()
         y = self.game_item.get_height()
-
         return (x,y)
     
     def change_item_image(self, new_img):
         print("New image: ", new_img)
         self.img = new_img
-        self.game_item = pygame.image.load(os.path.join("art", self.img))
+        self.game_item = pygame.image.load(os.path.join(self.ART_PATH, self.img))
     
     def change_item_full_image(self, new_full_img):
         print("New full image: ", new_full_img)
