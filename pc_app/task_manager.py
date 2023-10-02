@@ -113,7 +113,6 @@ class TaskManager(object):
             if self.board.level_number == 8 and not self.game_flags["SOUND_ENERGY_COLLECTED"]:
                 if "OKK" == self.stm.write_sth("volume"):
                     self.enable_task_action("increase_indicator_level")
-                    print('okk')
                 else:
                     print("Too quiet!!!")
 

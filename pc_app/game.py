@@ -70,8 +70,6 @@ class Game(object):
                         self.equipment.show_backpack()
                     else:
                         self.equipment.hide_backpack()
-                        # self.equipment.get_selected_item()
-                    # self.equipment.check_item_in_backpack('Book')
                 if event.key == pygame.K_r:
                     if self.equipment.is_open:
                         self.equipment.remove_item()
@@ -79,11 +77,9 @@ class Game(object):
                     selected_item = self.equipment.get_selected_item()
                     print("OBIEKT: ", selected_item)
                     self.item_view_window.show_item(selected_item, None, self.equipment, self.task_manager)
-                    #self.task_manager.show_dialog(["dialog_3.png"])
 
         if self.equipment.is_open:            
             self.equipment.update_equip()
-            #self.equipment.get_selected_item()
             
         if not self.item_view_window.is_visible and not self.task_manager.screen_lock and not self.equipment.is_open:
             self.task_manager.enable_flag("LISTENING")
@@ -91,16 +87,9 @@ class Game(object):
 
         if self.task_manager.monitor_tasks():
             self.change_level()
- 
-        # if self.board.level_number == 8:
-        #     self.stm.write_sth('volume')
 
         pygame.display.update()
         self.clock.tick(60)
 
     def change_level(self):
         print('Next level')
-        #self.level_number += 1
-        print("NOWY SCREEN")
-        # self.screen = new_screen
-        #update bg, new_items = new board

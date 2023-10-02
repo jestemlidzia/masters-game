@@ -1,6 +1,5 @@
-import item
-import pygame, os
-import json
+import pygame
+import os
 import board
 
 class Equipment(object):
@@ -14,7 +13,6 @@ class Equipment(object):
         self.inactive_area_view = pygame.image.load(os.path.join("art", 'inactive-box.png'))
 
         self.screen.blit(self.backpack_view, (384,720))
-        # (384, 650) cords where backpack is visible
 
         self.item_list = []
         self.cube_parts = ["Electronics element", "Battery", "Broken cube", "Resistor"]
@@ -53,7 +51,6 @@ class Equipment(object):
         else:
             print('There is no {} in the backpack'.format(item_name))
             return False
-
     
     def check_parts(self, number):
         count_elements = 0
@@ -64,7 +61,6 @@ class Equipment(object):
             if count_elements == len(parts):
                 return True
         return False
-
     
     def repaired(self, number):
         new_list = []
@@ -72,11 +68,8 @@ class Equipment(object):
         for i in self.item_list:
             if i.name not in parts:
                 new_list.append(i)
-        # new_list.append() 
         self.item_list = new_list
-
-
-        
+     
     def show_backpack(self):
         self.last_screen = self.screen.copy()
         print("Backpack open")
@@ -111,8 +104,6 @@ class Equipment(object):
                     if self.active_area_range[0] == self.x_areas_range[area_number][0]:
                         self.selected_item = item
                 area_number = area_number + 1
-            # else:
-            #     print('Your backpack is full! Throw an item out of your backpack to free up some space!')
 
     def get_selected_item_name(self):
         if self.selected_item != False:

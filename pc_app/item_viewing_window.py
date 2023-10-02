@@ -46,7 +46,6 @@ class ItemViewingWindow(object):
         self.last_screen = self.screen.copy()
         self.screen.blit(self.window_bg, (0,0))
         textbox_values = [self.current_item.name, self.current_item.dialog_text]
-        print("1111", textbox_values)
         if self.current_item.is_clickable:
             if self.current_item.is_liftable:
                 textbox_values += ['Take this item', 'I don\'t need it']
@@ -73,7 +72,6 @@ class ItemViewingWindow(object):
                 textbox_values.append("You can tape the scheme")
             else:
                 textbox_values.append('Nothing to do with it')
-        print("2222", textbox_values)
         for idx, tb in enumerate(self.textbox_list):
             print(tb)
             tb.display_text(textbox_values[idx])
